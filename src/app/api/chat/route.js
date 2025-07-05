@@ -8,7 +8,7 @@ export async function POST(req) {
     const { messages } = await req.json();
 
     // Connect to local Ollama server
-    const ollama = new Ollama({ host: 'http://localhost:11434' });
+    const ollama = new Ollama({ host: process.env.OLLAMA_HOST });
 
     // Start streaming the model's response
     const stream = await ollama.chat({
