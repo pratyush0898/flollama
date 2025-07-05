@@ -1,0 +1,23 @@
+@use '@/styles/variables' as *;
+
+@function color($keys...) {
+  $value: $colors;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: color(background);
+    line-height: 1.6;
+    color: color(text);
+}
