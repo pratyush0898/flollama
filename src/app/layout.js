@@ -1,4 +1,3 @@
-import ThemeToggle from "@/components/ThemeToggle";
 import { Inter, Poppins, Ubuntu, Noto_Sans } from "next/font/google";
 import "./globals.scss";
 

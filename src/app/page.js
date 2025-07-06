@@ -5,7 +5,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 // You could also fetch initial history from a database here.
 const initialMessages = [
-  { role: "assistant", content: "Hi! How can I help you today?" },
 ];
 
 export default function ChatPage() {

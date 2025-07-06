@@ -69,8 +69,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 16px 20px;
+  gap: 4px;
+  padding: 8px 20px;
   margin: 0 20px 20px;
   background-color: color(secondary);
   border-radius: 16px;
@@ -87,7 +87,7 @@ body {
   padding: 0;
   font-family: "Inter";
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
@@ -118,6 +118,7 @@ body {
   width: 24px;
   height: 24px;
   fill: color(secondary-text);
+  color: color(secondary-text);
 }
 
 .send-button {
@@ -131,4 +132,39 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.user-wapper,
+.assistant-wapper {
+  width: 100%;
+}
+
+.user-wapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.assistant-wapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-bubble {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(text);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  max-width: 60%;
+  height: auto;
+  padding: 8px 16px;
+  background-color: color(secondary);
+  border-radius: 12px;
 }
