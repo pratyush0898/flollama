@@ -12,7 +12,7 @@ export async function POST(req) {
 
     // Start streaming the model's response
     const stream = await ollama.chat({
-      model: 'nvmpratyush/flollama',
+      model: process.env.OLLAMA_MODEL,
       messages,
       stream: true
     });

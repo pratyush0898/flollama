@@ -4,15 +4,15 @@
 
   /* === Light === */
   --color-light-text: #1c1c1c;
-  --color-light-secondary-text: #1c1c1c;
-  --color-light-tertiary-text: #000000;
+  --color-light-secondary-text: hsla(0, 0%, 11%, 0.6);
+  --color-light-tertiary-text: hsla(0, 0%, 0%, 0.4);
   --color-light-background: #f5f5f5;
   --color-light-primary: #111111;
   --color-light-secondary: #e4eef1;
   --color-light-tertiary: #eaf0f5;
   --color-light-accent: #c6c7f8;
-  --color-light-bgblur-color: #ffffff;
-  --color-light-stroke: #1c1c1c;
+  --color-light-bgblur-color: hsla(0, 0%, 100%, 0.1);
+  --color-light-stroke: hsla(0, 0%, 11%, 0.1);
   --color-light-logicon: #3c3c3c;
   --color-light-dangerous: #b91c1c;
   --color-light-dangerous-text: #dc2626;
@@ -31,20 +31,20 @@
   --color-light-slate-900: #e3e3e3;
 
   /* === Dark === */
-  --color-dark-text: #e6e6e6;
-  --color-dark-secondary-text: #ffffff;
-  --color-dark-tertiary-text: #ffffff;
-  --color-dark-background: #1c1c1c;
-  --color-dark-primary: #f0f8ff;
-  --color-dark-secondary: #282828;
-  --color-dark-tertiary: #2e2e2e;
-  --color-dark-accent: #5354a2;
-  --color-dark-bgblur-color: #000000;
-  --color-dark-stroke: #ffffff;
-  --color-dark-logicon: #c3c3c3;
-  --color-dark-dangerous: #7f1d1d;
-  --color-dark-dangerous-text: #b91c1c;
-  --color-dark-popup-background: #282828;
+  --color-dark-text: hsl(0, 0%, 90%);
+  --color-dark-secondary-text: hsla(0, 0%, 100%, 0.6);
+  --color-dark-tertiary-text: hsla(0, 0%, 100%, 0.4);
+  --color-dark-background: hsl(0, 0%, 11%);
+  --color-dark-primary: hsl(208, 100%, 97%);
+  --color-dark-secondary: hsl(0, 0%, 16%);
+  --color-dark-tertiary: hsl(0, 0%, 18%);
+  --color-dark-accent: hsl(239, 32%, 48%);
+  --color-dark-bgblur-color: hsla(0, 0%, 0%, 0.1);
+  --color-dark-stroke: hsla(0, 0%, 100%, 0.1);  
+  --color-dark-logicon: hsl(0, 0%, 76%);
+  --color-dark-dangerous: hsl(0, 63%, 31%);
+  --color-dark-dangerous-text: hsl(0, 74%, 42%);
+  --color-dark-popup-background: hsl(0, 0%, 16%);
 
   /* === Dark Slate === */
   --color-dark-slate-50: #8f8f8f;

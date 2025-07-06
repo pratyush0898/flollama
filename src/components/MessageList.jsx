@@ -2,7 +2,7 @@ import MessageBubble from './MessageBubble.jsx';
 
 export default function MessageList({ messages, loading, streamingMsg }) {
   return (
-    <div>
+    <div className="message-list">
       {messages.map((msg, i) => (
         <MessageBubble key={i} msg={msg} />
       ))}

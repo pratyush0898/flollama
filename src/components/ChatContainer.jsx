@@ -39,7 +39,7 @@ export default function ChatContainer({ initialMessages }) {
 
   console.log(messages);
   return (
-    <div>
+    <div className='chat-container'>
       <MessageList
         messages={messages}
         loading={loading}
