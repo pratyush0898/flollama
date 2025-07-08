@@ -93,32 +93,33 @@ Cost    ≈ ₹16–₹21/hour
 ## 🎨 Figma Design
 
 * [Figma UI Design](https://www.figma.com/design/bkghFG35GZG93T7vbrO1lj/Flollama)
+![Figma Design](./assets/figma.png)
 
 ---
 
 ## 🌐 Live Website
 
 🔗 **[https://flollama.vercel.app/](https://flollama.vercel.app/)**
+![website](./assets/website.png)
 
 ---
 
 ## 🤖 Large Language Model
 
 🔗 **[Ollama Model Page](https://ollama.com/nvmpratyush/flollama)**
+![Ollama Model Page Screenshot](./assets/ollama.png)
 
 ---
 
 ## 📘 License
 
-```
 Pratyush Non-Commercial License (PNCL) v1.0
 
 © 2025 Pratyush Kumar
 
 Use allowed for personal, educational, and non-commercial purposes only. Redistribution, commercialization, or false attribution is strictly prohibited. You must retain author credits in all copies or forks.
 
-For full license terms, see LICENSE.md.
-```
+For full license terms, see [LICENSE](LICENSE).
 
 ---
 
