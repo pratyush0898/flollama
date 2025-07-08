@@ -40,7 +40,7 @@
   --color-dark-tertiary: hsl(0, 0%, 18%);
   --color-dark-accent: hsl(239, 32%, 48%);
   --color-dark-bgblur-color: hsla(0, 0%, 0%, 0.1);
-  --color-dark-stroke: hsla(0, 0%, 100%, 0.1);  
+  --color-dark-stroke: hsla(0, 0%, 100%, 0.1);
   --color-dark-logicon: hsl(0, 0%, 76%);
   --color-dark-dangerous: hsl(0, 63%, 31%);
   --color-dark-dangerous-text: hsl(0, 74%, 42%);
@@ -311,7 +311,7 @@
   --color-rose-900: #881337;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --color-text: var(--color-light-text);
   --color-secondary-text: var(--color-light-secondary-text);
   --color-tertiary-text: var(--color-light-tertiary-text);
@@ -328,7 +328,7 @@
   --color-popup-background: var(--color-light-popup-background);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --color-text: var(--color-dark-text);
   --color-secondary-text: var(--color-dark-secondary-text);
   --color-tertiary-text: var(--color-dark-tertiary-text);
@@ -374,8 +374,7 @@ $colors: (
     800: var(--color-slate-800),
     900: var(--color-slate-900),
   ),
-  gray:
-  (
+  gray: (
     50: var(--color-gray-50),
     100: var(--color-gray-100),
     200: var(--color-gray-200),
@@ -628,3 +627,100 @@ $colors: (
     900: var(--color-rose-900),
   ),
 );
+
+.biggest {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 64px;
+  letter-spacing: 1%;
+  color: var(--color-text);
+}
+
+.h1 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 0.3%;
+  color: var(--color-text);
+}
+
+.h2 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--color-text);
+}
+
+.h3 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--color-text);
+}
+
+.h4 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--color-text);
+}
+
+.h5 {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--color-text);
+}
+
+.body {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--color-text);
+}
+
+.body-small {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.p {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.caption {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.label {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.logo {
+  font-family: "Ubuntu";
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 20px;
+  text-align: left;
+  color: var(--color-logicon);
+}
+
+.logo-small {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 20px;
+  text-align: left;
+  color: var(--color-logicon);
+}

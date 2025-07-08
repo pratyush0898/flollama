@@ -1,5 +1,6 @@
 import { Inter, Poppins, Ubuntu, Noto_Sans } from "next/font/google";
 import "./globals.scss";
+import Sidebar from "@/components/Sidebar.jsx";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,7 +40,10 @@ const noto = Noto_Sans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="app-body">
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }

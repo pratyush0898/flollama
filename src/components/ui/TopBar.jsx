@@ -4,7 +4,7 @@ const TopBar = () => {
   return (
     <div className='topbar'>
         <div className="trademark">
-            <span className='trademark-text'>flollama</span>
+            <span className='logo-small'>flollama</span>
         </div>
     </div>
   )

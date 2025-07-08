@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+@import "tailwindcss";
 
 @function color($keys...) {
   $value: $colors;
@@ -22,6 +23,11 @@ body {
   color: color(text);
   font-family: "Inter", "Poppins", "Ubuntu", "Noto Sans", sans-serif;
   height: 100dvh;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: row;
 }
 
 .topbar {
@@ -104,16 +110,6 @@ body {
   color: color(tertiary-text);
 }
 
-.trademark-text {
-  font-family: "Ubuntu";
-  font-weight: 400;
-  font-size: 27px;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: color(logicon);
-}
-
 .input-icon {
   width: 24px;
   height: 24px;
@@ -167,4 +163,226 @@ body {
   padding: 8px 16px;
   background-color: color(secondary);
   border-radius: 12px;
+}
+
+.pri-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 38px;
+  padding: 8px 48px;
+  background-color: color(primary);
+  border-radius: 12px;
+
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(secondary);
+  fill: color(secondary);
+  margin: 4px;
+}
+
+.sec-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 38px;
+  padding: 8px 48px;
+  background-color: color(secondary);
+  border-radius: 12px;
+
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(text);
+  fill: color(text);
+  margin: 4px;
+}
+
+.outline-button {
+  border: 1px solid color(stroke);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 38px;
+  padding: 8px 48px;
+  background-color: transparent;
+  border-radius: 12px;
+
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(text);
+  fill: color(text);
+  margin: 4px;
+}
+
+.link-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 38px;
+  padding: 8px 48px;
+  background-color: transparent;
+  border-radius: 12px;
+
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(text);
+  fill: color(text);
+}
+
+.sidebar-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  max-width: 272px;
+  min-width: 200px;
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: color(text);
+  fill: color(text);
+
+  overflow: hidden;
+}
+
+.sidebar-button:hover {
+  background-color: color(secondary);
+}
+
+.sidebar-button-active {
+  background-color: color(secondary);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 364px;
+  width: auto;
+  height: 100%;
+  border-right: solid 1px color(stroke);
+  background-color: color(background);
+}
+
+.sidebar .top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  width: auto;
+  flex: 1;
+  padding: 16px;
+}
+
+.sidebar .bottom {
+  border-top: 1px solid color(stroke);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  width: calc(100% - 8px);
+  height: auto;
+  padding: 20px;
+}
+
+.sidebar .top .action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  padding: 0px;
+}
+
+.theme-toggle {
+  border: 1px solid color(stroke);
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+
+.chats-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+}
+
+.chats-text {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(secondary-text);
+}
+
+.chats-wapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+  padding: 0px;
 }
