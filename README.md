@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🦙 Flollama: Where Ideas Flow Freely
 
-## Getting Started
+> A full-stack, open-access AI chatbot powered by Meta’s LLaMA 2.3 and built with Next.js — for everyone, free of cost.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📖 Overview
+
+**Flollama** is a modern conversational AI chatbot developed by **[Pratyush Kumar](https://github.com/pratyush0898)**. Built using **Ollama**, **Meta's LLaMA 2.3**, and a sleek **Next.js interface**, it offers an open-source, privacy-respecting ChatGPT-style experience — ideal for students, creators, and casual users alike.
+
+---
+
+## 🚀 Tech Stack
+
+| Layer            | Tools Used |
+|------------------|------------|
+| 🧠 AI Engine     | `Ollama`, `Meta LLaMA 2.3`, custom system prompt (`Makefile`) |
+| 🌐 Frontend      | `Next.js 15`, `TailwindCSS 4`, `React`, `Shadcn UI` |
+| ⚙️ Backend/API   | `Next.js API Routes`, `Node.js 24`, `npm 10`, `Turbopack` |
+| 🔐 Auth & DB     | `Firebase Auth`, `Firestore Database` |
+| ☁️ Hosting       | `Vercel`, `Google Cloud` |
+| 🎨 Design        | `Figma` |
+| 📂 Version Ctrl  | `Git`, `GitHub` |
+
+---
+
+## 🧩 Features
+
+- 💬 LLaMA 2.3 powered AI chat via Ollama API
+- 🌓 Light & Dark UI themes with Tailwind + Shadcn
+- 🔐 Firebase Google Sign-In
+- 📊 Chat history storage in Firestore
+- ⚡ Superfast bundling with Turbopack
+- 📱 Fully responsive, mobile-friendly
+- 🌐 Deployable instantly with Vercel
+
+---
+
+## ☁️ Google Cloud Server Config
+
+```txt
+CPU     4 vCPU (e2-highcpu-4)
+GPU     NVIDIA A2 12GB / GTX 1650
+RAM     8 GB
+SWAP    8 GB
+DISK    50 GB SSD
+OS      Debian 12 (Bookworm)
+Cost    ≈ ₹16–₹21/hour
+````
+
+---
+
+## 🔤 How to Pronounce "Flollama"
+
+**Pronunciation:** `"flow-LAH-muh"`
+**IPA:** `/floʊˈlɑːmə/`
+
+| Part | Sounds Like            |
+| ---- | ---------------------- |
+| Flo  | “go” → /floʊ/          |
+| Lla  | “la” in llama → /ˈlɑː/ |
+| ma   | “muh” → /mə/           |
+
+---
+
+## 🎨 Brand Assets
+
+### 🔘 Logos
+
+* **Dark Mode Logo**
+  ![Logo Dark](./assets/logo-dark.png)
+
+* **Light Mode Logo**
+  ![Logo Light](./assets/logo-light.png)
+
+---
+
+### 🎨 Color Palette
+
+| Theme | Text      | Background | Primary   | Secondary | Accent    |
+| ----- | --------- | ---------- | --------- | --------- | --------- |
+| Light | `#1C1C1C` | `#FFFFFF`  | `#111111` | `#F1F5F9` | `#C6C7F8` |
+| Dark  | `#FFFFFF` | `#1C1C1C`  | `#F0F8FF` | `#282828` | `#C6C7F8` |
+
+### 🔤 Fonts
+
+* **Primary UI Font:** Inter
+* **Secondary Font:** Poppins
+* **Logo Font:** Ubuntu
+
+---
+
+## 🎨 Figma Design
+
+* [Figma UI Design](https://www.figma.com/design/bkghFG35GZG93T7vbrO1lj/Flollama)
+
+---
+
+## 🌐 Live Website
+
+🔗 **[https://flollama.vercel.app/](https://flollama.vercel.app/)**
+
+---
+
+## 🤖 Large Language Model
+
+🔗 **[Ollama Model Page](https://ollama.com/nvmpratyush/flollama)**
+
+---
+
+## 📘 License
+
+```
+Pratyush Non-Commercial License (PNCL) v1.0
+
+© 2025 Pratyush Kumar
+
+Use allowed for personal, educational, and non-commercial purposes only. Redistribution, commercialization, or false attribution is strictly prohibited. You must retain author credits in all copies or forks.
+
+For full license terms, see LICENSE.md.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✅ Conclusion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Flollama** isn’t just a chatbot — it's proof that students can build powerful AI tools that are **open**, **accessible**, and **beautifully designed**.
 
-## Learn More
+Built with ❤️ by [Pratyush Kumar](https://github.com/pratyush0898), Flollama is your friendly, fast, and free AI assistant. Ask questions, spark ideas, or just chat — anytime, anywhere.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> ✨ *If you find this project useful, don’t forget to ⭐ star the repo and share it with others!*
