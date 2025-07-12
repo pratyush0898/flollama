@@ -1,0 +1,24 @@
+{
+  "one user's userid": {
+    "conversation name": [
+      { "role": "user", "content": "hey" },
+      { "role": "assistant", "content": "Hello! How can I assist you today?" },
+      { "role": "user", "content": "Can you help me with my code?" },
+      {
+        "role": "assistant",
+        "content": "Of course! Please share the code or describe the issue you're facing."
+      }
+    ]
+  },
+  "second user's userid": {
+    "conversation name": [
+      { "role": "user", "content": "hey" },
+      { "role": "assistant", "content": "Hello! How can I assist you today?" },
+      { "role": "user", "content": "Can you help me with my code?" },
+      {
+        "role": "assistant",
+        "content": "Of course! Please share the code or describe the issue you're facing."
+      }
+    ]
+  }
+}

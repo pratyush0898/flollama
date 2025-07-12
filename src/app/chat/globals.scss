@@ -15,6 +15,7 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  transition: all ease-in-out 100ms;
 }
 
 body {
@@ -33,19 +34,11 @@ body {
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   gap: 10px;
   width: 100%;
   padding: 10px 20px;
   border-bottom: 1px solid color(stroke);
-}
-
-.trademark {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  width: 142px;
-  height: 32px;
 }
 
 .chat-section {
@@ -304,27 +297,48 @@ body {
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   gap: 20px;
   max-width: 364px;
-  width: auto;
   height: 100%;
+  padding: 16px 16px 0px 16px;
   border-right: solid 1px color(stroke);
   background-color: color(background);
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    display: none; // hidden by default on mobile
+  }
+
+  &.open {
+    @media (max-width: 768px) {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: fit-content;
+      max-width: 90%;
+      max-width: none;
+      height: 100vh;
+      transform: translateX(0%);
+      border-right: 1px solid color(stroke);
+      background-color: color(background);
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 50;
+    }
+  }
+  transition: all ease-in-out 100ms;
 }
 
 .sidebar .top {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: start;
   gap: 24px;
   width: auto;
+  min-width: 256px;
   flex: 1;
-  padding: 16px;
+  // padding: 16px;
 }
 
 .sidebar .bottom {
@@ -332,9 +346,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   gap: 12px;
-  width: calc(100% - 8px);
+  width: 100%;
   height: auto;
   padding: 20px;
 }
@@ -345,7 +358,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  width: auto;
+  width: 100%;
   height: auto;
   padding: 0px;
 }
@@ -373,7 +386,7 @@ body {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0em;
-  text-align: center;
+  text-align: start;
   color: color(secondary-text);
 }
 
@@ -385,4 +398,25 @@ body {
   gap: 0px;
   width: 100%;
   padding: 0px;
+}
+
+.icon {
+  display: flex;
+  color: color(text);
+  fill: color(text);
+}
+
+.togglesidebar-icon {
+  color: color(secondary-text);
+  color: color(secondary-text);
+}
+
+.close-sidebar {
+  display: none;
+  opacity: 0;
+}
+
+.bbscs {
+  opacity: 0;
+  display: none !important;
 }

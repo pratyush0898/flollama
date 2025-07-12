@@ -1,49 +1,45 @@
-import { Inter, Poppins, Ubuntu, Noto_Sans } from "next/font/google";
-import "./globals.scss";
-import Sidebar from "@/components/Sidebar.jsx";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-const ubuntu = Ubuntu({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-ubuntu",
-  display: "swap",
-});
-
-const noto = Noto_Sans({
-  subsets: [
-    "cyrillic",
-    "cyrillic-ext",
-    "devanagari",
-    "greek",
-    "greek-ext",
-    "latin",
-    "latin-ext",
-    "vietnamese",
+export const metadata = {
+  title: "Flollama – Your AI Chat Assistant",
+  description:
+    "Flollama is a modern AI chatbot built using Ollama + Next.js. Chat with intelligence, speed, and style.",
+  keywords: [
+    "Flollama",
+    "AI chatbot",
+    "Ollama",
+    "Next.js",
+    "React AI",
+    "LLaMA 3",
+    "open-source chatbot",
   ],
-  display: "swap",
-  variable: "--font-noto",
-});
+  authors: [{ name: "Pratyush Kumar", url: "https://github.com/pratyush0898" }],
+  creator: "Flollama Team",
+  themeColor: "#0f172a",
+  icons: {
+    icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Flollama – Your AI Chat Assistant",
+    description:
+      "Open-source, private, fast chatbot using Ollama LLaMA 3 + Next.js + Tailwind.",
+    url: "https://flollama.ai",
+    siteName: "Flollama",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Flollama Chatbot",
+      },
+    ],
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="app-body">
-        <Sidebar />
-        {children}
-      </body>
+      <body className="app-body">{children}</body>
     </html>
   );
 }
