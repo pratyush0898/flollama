@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Inter, Poppins, Ubuntu, Noto_Sans } from "next/font/google";
-import "./globals.scss";
 import Sidebar from "@/components/Sidebar.jsx";
 import TopBar from "@/components/ui/TopBar";
-import Head from "next/head";
+import "./globals.scss";
 
 const inter = Inter({
   subsets: ["latin"],

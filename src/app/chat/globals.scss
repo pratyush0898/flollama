@@ -22,7 +22,7 @@ body {
   background-color: color(background);
   line-height: 1.6;
   color: color(text);
-  font-family: "Inter", "Poppins", "Ubuntu", "Noto Sans", sans-serif;
+  font-family: var(--font-inter), var(--font-poppins), var(--font-ubuntu), var(--font-noto), sans-serif;
   height: 100dvh;
 }
 
