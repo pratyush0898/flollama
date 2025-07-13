@@ -102,7 +102,7 @@ const Sidebar = ({ isOpen, isDark, toggleTheme, toggleSidebar }) => {
               </PrimaryButton>
             </div>
             <div className="chats-group">
-              <span className="chats-text">Chats</span>
+              <span className="chats-text body">Chats</span>
               <div className="chats-wapper">
                 <SidebarButton className="chat-item">
                   Hello From Flollama

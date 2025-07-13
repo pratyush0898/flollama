@@ -3,7 +3,7 @@ import React from "react";
 const PrimaryButton = ({ children, className = "", ...props }) => {
   return (
     <button
-      className={`pri-button ${className}`}
+      className={`pri-button body ${className}`}
       {...props}
     >
       {children}
@@ -14,7 +14,7 @@ const PrimaryButton = ({ children, className = "", ...props }) => {
 const SecondaryButton = ({ children, className = "", ...props }) => {
   return (
     <button
-      className={`sec-button ${className}`}
+      className={`sec-button body ${className}`}
       {...props}
     >
       {children}
@@ -25,7 +25,7 @@ const SecondaryButton = ({ children, className = "", ...props }) => {
 const OutlineButton = ({ children, className = "", ...props }) => {
   return (
     <button
-      className={`outline-button ${className}`}
+      className={`outline-button body ${className}`}
       {...props}
     >
       {children}
@@ -36,7 +36,7 @@ const OutlineButton = ({ children, className = "", ...props }) => {
 const Link = ({ children, className = "", ...props }) => {
   return (
     <button
-      className={`link-button ${className}`}
+      className={`link-button body ${className}`}
       {...props}
     >
       {children}
@@ -47,7 +47,7 @@ const Link = ({ children, className = "", ...props }) => {
 const SidebarButton = ({ children, className = "", active, ...props }) => {
   return (
     <button
-      className={`sidebar-button ${active ? "sidebar-button-active" : ""} ${className}`}
+      className={`sidebar-button body-small ${active ? "sidebar-button-active" : ""} ${className}`}
       {...props}
     >
       {children}

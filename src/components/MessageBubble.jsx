@@ -1,7 +1,3 @@
-"use client";
-
-import { userAgent } from "next/server";
-
 export default function MessageBubble({ msg, streaming = false }) {
   const isUser = msg.role === "user";
 

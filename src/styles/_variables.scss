@@ -628,99 +628,95 @@ $colors: (
   ),
 );
 
+$fonts: (
+  inter: var(--font-inter),
+  poppins: var(--font-poppins),
+  ubuntu: var(--font-ubuntu),
+  Inter: var(--font-inter),
+  Poppins: var(--font-poppins),
+  Ubuntu: var(--font-ubuntu),
+);
+
 .biggest {
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   font-weight: 400;
   font-size: 64px;
   letter-spacing: 1%;
-  color: var(--color-text);
 }
 
 .h1 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 700;
   font-size: 48px;
   letter-spacing: 0.3%;
-  color: var(--color-text);
 }
 
 .h2 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 700;
   font-size: 40px;
-  color: var(--color-text);
 }
 
 .h3 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 700;
   font-size: 32px;
-  color: var(--color-text);
 }
 
 .h4 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 700;
   font-size: 28px;
-  color: var(--color-text);
 }
 
 .h5 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 24px;
-  color: var(--color-text);
 }
 
 .body {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 400;
   font-size: 18px;
-  color: var(--color-text);
 }
 
 .body-small {
-  font-family: "Inter";
-  font-weight: 300;
+  font-family: var(--font-inter);
+  font-weight: 400;
   font-size: 16px;
-  color: var(--color-text);
 }
 
 .p {
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   font-weight: 400;
   font-size: 16px;
-  color: var(--color-text);
 }
 
 .caption {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 300;
   font-size: 14px;
-  color: var(--color-text);
 }
 
 .label {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-weight: 300;
   font-size: 12px;
-  color: var(--color-text);
 }
 
 .logo {
-  font-family: "Ubuntu";
+  font-family: var(--font-ubuntu);
   font-weight: 500;
   font-size: 48px;
   line-height: 20px;
   text-align: left;
-  color: var(--color-logicon);
 }
 
 .logo-small {
-  font-family: "Ubuntu";
+  font-family: var(--font-ubuntu);
   font-weight: 400;
   font-size: 28px;
   line-height: 20px;
   text-align: left;
-  color: var(--color-logicon);
 }

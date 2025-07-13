@@ -1,3 +1,5 @@
+import { inter, poppins, ubuntu, noto } from "@/font/fonts.jsx";
+
 export const metadata = {
   title: "Flollama – Your AI Chat Assistant",
   description:
@@ -39,7 +41,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="app-body">{children}</body>
+      <body
+        className={`app-body ${inter.variable} ${poppins.variable} ${ubuntu.variable} ${noto.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

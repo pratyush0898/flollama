@@ -1,6 +1,15 @@
 @use "@/styles/variables" as *;
 @import "tailwindcss";
 
+@function font($keys...) {
+  $value: $fonts;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
+}
+
+
 @function color($keys...) {
   $value: $colors;
   @each $key in $keys {
@@ -22,7 +31,8 @@ body {
   background-color: color(background);
   line-height: 1.6;
   color: color(text);
-  font-family: var(--font-inter), var(--font-poppins), var(--font-ubuntu), var(--font-noto), sans-serif;
+  font-family: font(Inter), font(Poppins), font(Ubuntu),
+    var(--font-noto), sans-serif;
   height: 100dvh;
 }
 
@@ -84,9 +94,9 @@ body {
   background: none;
   color: color(text);
   padding: 0;
-  font-family: "Inter";
+  font-family: font(inter);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
@@ -94,7 +104,7 @@ body {
 }
 
 .chat-input::placeholder {
-  font-family: "Inter";
+  font-family: font(inter);
   font-weight: 300;
   font-size: 16px;
   line-height: auto;
@@ -135,11 +145,12 @@ body {
 
 .assistant-wapper {
   display: flex;
+  font-family: font(poppins);
   justify-content: flex-start;
 }
 
 .user-bubble {
-  font-family: "Poppins";
+  font-family: font(poppins);
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0em;
@@ -173,8 +184,7 @@ body {
   padding: 8px 48px;
   background-color: color(primary);
   border-radius: 12px;
-
-  font-family: "Inter";
+  font-family: font(inter);
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0em;
@@ -199,11 +209,6 @@ body {
   padding: 8px 48px;
   background-color: color(secondary);
   border-radius: 12px;
-
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0em;
   text-align: center;
   color: color(text);
   fill: color(text);
@@ -224,11 +229,6 @@ body {
   padding: 8px 48px;
   background-color: transparent;
   border-radius: 12px;
-
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0em;
   text-align: center;
   color: color(text);
   fill: color(text);
@@ -250,10 +250,6 @@ body {
   padding: 8px 48px;
   background-color: transparent;
   border-radius: 12px;
-
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 18px;
   letter-spacing: 0em;
   text-align: center;
   color: color(text);
@@ -276,11 +272,6 @@ body {
   min-width: 200px;
   padding: 8px 12px;
   border-radius: 6px;
-
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0em;
   text-align: left;
   color: color(text);
   fill: color(text);
@@ -304,7 +295,7 @@ body {
   border-right: solid 1px color(stroke);
   background-color: color(background);
   overflow: hidden;
-  
+
   @media (max-width: 768px) {
     display: none; // hidden by default on mobile
   }
@@ -381,7 +372,7 @@ body {
 }
 
 .chats-text {
-  font-family: "Inter";
+  font-family: font(inter);
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
