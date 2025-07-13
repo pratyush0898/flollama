@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
     if (savedSidebarState !== null) {
       setIsOpen(savedSidebarState === "true");
     } else {
-      setIsOpen(isLargeScreen); // default: open only if large screen
+      setIsOpen(isLargeScreen);
     }
 
     const handleResize = () => {
@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
     localStorage.setItem("theme", newTheme);
   };
 
-  function toggleSidebar() {
+  const toggleSidebar = () => {
     const newState = !isOpen;
     setIsOpen(newState);
     localStorage.setItem("sidebar", newState);
@@ -101,7 +101,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="app-body">
+      <body
+        className={`app-body ${inter.variable} ${poppins.variable} ${ubuntu.variable} ${noto.variable}`}
+      >
         <Sidebar
           isOpen={isOpen}
           isDark={isDark}
