@@ -1,23 +1,6 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const TopBar = ({ toggleSidebar }) => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    // Function to check screen size
-    const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
-    };
-
-    checkScreenSize(); // initial check
-
-    // Add resize listener
-    window.addEventListener("resize", checkScreenSize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+const TopBar = ({ toggleSidebar, isSmallScreen }) => {
 
   return (
     <div className="topbar">

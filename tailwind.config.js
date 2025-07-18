@@ -20,6 +20,7 @@ module.exports = {
         dangerous: "var(--color-dangerous)",
         "dangerous-text": "var(--color-dangerous-text)",
         "popup-background": "var(--color-popup-background)",
+        "hover-background": "var(--color-hover-background)",
         slate: {
           50: "var(--color-light-slate-50)",
           100: "var(--color-light-slate-100)",

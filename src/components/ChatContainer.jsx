@@ -2,7 +2,6 @@
 import { useState } from "react";
 import MessageList from "./MessageList.jsx";
 import ChatInput from "./ChatInput.jsx";
-import { PrimaryButton, SecondaryButton, OutlineButton, Link } from "@/components/ui/Button.jsx";
 import { chatWithFlollama } from "@/lib/ollamaApi.js";
 
 export default function ChatContainer({ initialMessages }) {

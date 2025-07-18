@@ -3,15 +3,29 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import TopBar from "@/components/ui/TopBar";
+import Settings from "@/components/Settings";
 
 export default function AppShell({ children }) {
   const [isDark, setIsDark] = useState(false);
+  const [isSettingOpen, setIsSettingOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   useEffect(() => {
     // Theme setup
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     const theme = savedTheme || (prefersDark ? "dark" : "light");
 
     setIsDark(theme === "dark");
@@ -45,11 +59,30 @@ export default function AppShell({ children }) {
     localStorage.setItem("sidebar", newState.toString());
   };
 
+  const toggleSettings = () => {
+    setIsSettingOpen(!isSettingOpen);
+  };
+
   return (
     <>
-      <Sidebar isOpen={isOpen} isDark={isDark} toggleTheme={toggleTheme} toggleSidebar={toggleSidebar} />
+      {isSettingOpen ? (
+        <Settings
+          toggleSettings={toggleSettings}
+          toggleTheme={toggleTheme}
+          isDark={isDark}
+        />
+      ) : (
+        <></>
+      )}
+      <Sidebar
+        isOpen={isOpen}
+        isDark={isDark}
+        toggleTheme={toggleTheme}
+        toggleSidebar={toggleSidebar}
+        toggleSettings={toggleSettings}
+      />
       <div className="chat-section flex-1">
-        <TopBar toggleSidebar={toggleSidebar} />
+        <TopBar toggleSidebar={toggleSidebar} isSmallScreen={isSmallScreen} />
         {children}
       </div>
     </>

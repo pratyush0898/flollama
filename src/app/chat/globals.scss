@@ -9,7 +9,6 @@
   @return $value;
 }
 
-
 @function color($keys...) {
   $value: $colors;
   @each $key in $keys {
@@ -31,8 +30,8 @@ body {
   background-color: color(background);
   line-height: 1.6;
   color: color(text);
-  font-family: font(Inter), font(Poppins), font(Ubuntu),
-    var(--font-noto), sans-serif;
+  font-family: font(Inter), font(Poppins), font(Ubuntu), var(--font-noto),
+    sans-serif;
   height: 100dvh;
 }
 
@@ -154,7 +153,6 @@ body {
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0em;
-  text-align: center;
   color: color(text);
   display: flex;
   flex-direction: row;
@@ -164,9 +162,19 @@ body {
   width: auto;
   max-width: 60%;
   height: auto;
+  word-break: break-word;
   padding: 8px 16px;
   background-color: color(secondary);
   border-radius: 12px;
+  text-align: start;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
 }
 
 .pri-button {
@@ -191,6 +199,31 @@ body {
   text-align: center;
   color: color(secondary);
   fill: color(secondary);
+  margin: 4px;
+}
+
+.dangerous-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 38px;
+  padding: 8px 48px;
+  background-color: color(dangerous);
+  border-radius: 12px;
+  font-family: font(inter);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(text);
+  fill: color(text);
   margin: 4px;
 }
 
@@ -233,6 +266,31 @@ body {
   color: color(text);
   fill: color(text);
   margin: 4px;
+}
+
+.dangerous-outline-button {
+  border: 1px solid color(dangerous);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 38px;
+  padding: 8px 48px;
+  background-color: transparent;
+  border-radius: 12px;
+  text-align: center;
+  color: color(dangerous-text);
+  fill: color(dangerous-text);
+  margin: 4px;
+}
+
+.button-w-auto {
+  padding: 8px 24px;
+  border-radius: 8px;
 }
 
 .link-button {
@@ -410,4 +468,177 @@ body {
 .bbscs {
   opacity: 0;
   display: none !important;
+}
+
+.settings-wrapper {
+  position: fixed; // fills viewport regardless of scroll
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px); // uniform blur
+  background-color: rgba(0, 0, 0, 0.1); // black with 10% opacity
+  z-index: 9998; // one less than `.settings` to keep it below
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 1020px;
+  height: 680px;
+  padding: 0px;
+
+  background-color: color(popup-background);
+  border-width: 2px;
+  border-color: color(stroke);
+  border-style: solid;
+  border-radius: 12px;
+}
+
+.topbar-setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  padding: 16px 24px;
+  border-bottom: 1px solid color(stroke);
+}
+
+.rhs {
+  color: color(text);
+  fill: color(secondary-text);
+}
+
+.main-setting {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 4px 32px 0px 32px;
+}
+
+.main-setting-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  height: auto;
+  padding: 12px 0px;
+  border-bottom: 1px solid color(stroke);
+}
+
+.main-setting-items-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+  padding: 0px 10px;
+}
+
+.main-setting-items-item-text {
+  color: color(secondary-text);
+}
+
+.setting-themetoggle {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: left;
+  color: color(text);
+  fill: color(text);
+
+  overflow: hidden;
+}
+
+.setting-themetoggle:hover {
+  background-color: color(hover-background);
+}
+
+.setting-themetoggle:active {
+  background-color: color(hover-background);
+}
+
+.settings-font-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  width: 100px;
+  height: auto;
+  padding: 7px 24px;
+  background-color: color(tertiary);
+  border-width: 0.5px;
+  border-color: color(stroke);
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.inter-info {
+  font-family: font(Inter);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(secondary-text);
+}
+
+.poppins-info {
+  font-family: font(Poppins);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(secondary-text);
+}
+
+.ubuntu-info {
+  font-family: font(Ubuntu);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: color(secondary-text);
+}
+
+.fonts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
 }

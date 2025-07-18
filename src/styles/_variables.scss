@@ -6,17 +6,18 @@
   --color-light-text: #1c1c1c;
   --color-light-secondary-text: hsla(0, 0%, 11%, 0.6);
   --color-light-tertiary-text: hsla(0, 0%, 0%, 0.4);
-  --color-light-background: #f5f5f5;
-  --color-light-primary: #111111;
-  --color-light-secondary: #e4eef1;
-  --color-light-tertiary: #eaf0f5;
+  --color-light-background: hsl(0, 0%, 96%);
+  --color-light-primary: hsl(0, 0%, 7%);
+  --color-light-secondary: hsl(194, 32%, 92%);
+  --color-light-tertiary: hsl(207, 35%, 94%);
   --color-light-accent: #c6c7f8;
   --color-light-bgblur-color: hsla(0, 0%, 100%, 0.1);
   --color-light-stroke: hsla(0, 0%, 11%, 0.1);
-  --color-light-logicon: #3c3c3c;
-  --color-light-dangerous: #b91c1c;
-  --color-light-dangerous-text: #dc2626;
-  --color-light-popup-background: #f1f5f9;
+  --color-light-logicon: hsl(0, 0%, 24%);
+  --color-light-dangerous: hsl(0, 74%, 42%);
+  --color-light-dangerous-text: hsl(0, 72%, 51%);
+  --color-light-popup-background: hsl(210, 40%, 96%);
+  --color-light-hover-background: hsl(207, 35%, 94%);
 
   /* === Light Slate === */
   --color-light-slate-50: #707070;
@@ -45,6 +46,7 @@
   --color-dark-dangerous: hsl(0, 63%, 31%);
   --color-dark-dangerous-text: hsl(0, 74%, 42%);
   --color-dark-popup-background: hsl(0, 0%, 16%);
+  --color-dark-hover-background: hsl(0, 0%, 20%);
 
   /* === Dark Slate === */
   --color-dark-slate-50: #8f8f8f;
@@ -326,6 +328,7 @@
   --color-dangerous: var(--color-light-dangerous);
   --color-dangerous-text: var(--color-light-dangerous-text);
   --color-popup-background: var(--color-light-popup-background);
+  --color-hover-background: var(--color-light-hover-background);
 }
 
 [data-theme="dark"] {
@@ -343,6 +346,7 @@
   --color-dangerous: var(--color-dark-dangerous);
   --color-dangerous-text: var(--color-dark-dangerous-text);
   --color-popup-background: var(--color-dark-popup-background);
+  --color-hover-background: var(--color-dark-hover-background);
 }
 
 $colors: (
@@ -362,6 +366,7 @@ $colors: (
   dangerous: var(--color-dangerous),
   dangerous-text: var(--color-dangerous-text),
   popup-background: var(--color-popup-background),
+  hover-background: var(--color-hover-background),
   slate: (
     50: var(--color-slate-50),
     100: var(--color-slate-100),
@@ -639,8 +644,8 @@ $fonts: (
 
 .biggest {
   font-family: var(--font-poppins);
-  font-weight: 400;
-  font-size: 64px;
+  font-weight: 800;
+  font-size: 96px;
   letter-spacing: 1%;
 }
 

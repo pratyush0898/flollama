@@ -11,10 +11,11 @@ const PrimaryButton = ({ children, className = "", ...props }) => {
   );
 };
 
+
 const SecondaryButton = ({ children, className = "", ...props }) => {
   return (
     <button
-      className={`sec-button body ${className}`}
+    className={`sec-button body ${className}`}
       {...props}
     >
       {children}
@@ -38,7 +39,7 @@ const Link = ({ children, className = "", ...props }) => {
     <button
       className={`link-button body ${className}`}
       {...props}
-    >
+      >
       {children}
     </button>
   );
@@ -55,4 +56,26 @@ const SidebarButton = ({ children, className = "", active, ...props }) => {
   );
 };
 
-export { PrimaryButton, SecondaryButton, OutlineButton, Link, SidebarButton };
+const DangerousButton = ({ children, className = "", ...props }) => {
+  return (
+    <button
+      className={`dangerous-button body ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
+const DangerousOutlineButton = ({ children, className = "", ...props }) => {
+  return (
+    <button
+      className={`dangerous-outline-button body ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
+export { PrimaryButton, SecondaryButton, OutlineButton, Link, SidebarButton, DangerousButton, DangerousOutlineButton };

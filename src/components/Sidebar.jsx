@@ -1,8 +1,13 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { PrimaryButton, SidebarButton } from "@/components/ui/Button.jsx";
 
-const Sidebar = ({ isOpen, isDark, toggleTheme, toggleSidebar }) => {
+const Sidebar = ({
+  isOpen,
+  isDark,
+  toggleTheme,
+  toggleSidebar,
+  toggleSettings,
+}) => {
   return (
     <div className={`sidebar ${isOpen ? "w-[290px] open" : "w-[60px]"}`}>
       <div
@@ -118,7 +123,7 @@ const Sidebar = ({ isOpen, isDark, toggleTheme, toggleSidebar }) => {
           </div>
         </div>
         <div className="bottom flex-row items-start">
-          <SidebarButton className="w-full">
+          <SidebarButton className="w-full" onClick={toggleSettings}>
             <svg
               className="fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +135,7 @@ const Sidebar = ({ isOpen, isDark, toggleTheme, toggleSidebar }) => {
             </svg>
             Settings
           </SidebarButton>
-          <SidebarButton onClick={toggleTheme} className="w-full">
+          <SidebarButton onClick={toggleTheme}>
             {isDark ? (
               <>
                 <svg
