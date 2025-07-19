@@ -64,7 +64,7 @@ const Settings = ({ toggleTheme, isDark, toggleSettings }) => {
                   Primary
                 </span>
                 <button className="settings-font-info">
-                  <span className="inter-info">Inter</span>
+                  <span className="inter-info body">Inter</span>
                 </button>
               </div>
               <div className="main-setting-items-item">
@@ -72,7 +72,7 @@ const Settings = ({ toggleTheme, isDark, toggleSettings }) => {
                   Secondary
                 </span>
                 <button className="settings-font-info">
-                  <span className="poppins-info">Poppins</span>
+                  <span className="poppins-info p">Poppins</span>
                 </button>
               </div>
               <div className="main-setting-items-item">

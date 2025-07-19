@@ -4,7 +4,7 @@ export default function MessageBubble({ msg, streaming = false }) {
   if (isUser) {
     return (
       <div className="user-wapper">
-        <div className="user-bubble">
+        <div className="user-bubble p">
           <noscript>You:</noscript>
           <span>{msg.content}</span>
         </div>

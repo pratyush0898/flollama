@@ -13,7 +13,7 @@ export default function AppShell({ children }) {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
+      setIsSmallScreen(window.innerWidth <= 768);
     };
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);

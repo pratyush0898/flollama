@@ -692,6 +692,12 @@ $fonts: (
   font-size: 16px;
 }
 
+.body-sm {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  font-size: 16px;
+}
+
 .p {
   font-family: var(--font-poppins);
   font-weight: 400;
@@ -722,6 +728,14 @@ $fonts: (
   font-family: var(--font-ubuntu);
   font-weight: 400;
   font-size: 28px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.logo-sm {
+  font-family: var(--font-ubuntu);
+  font-weight: 500;
+  font-size: 18px;
   line-height: 20px;
   text-align: left;
 }

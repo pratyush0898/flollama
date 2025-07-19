@@ -93,9 +93,6 @@ body {
   background: none;
   color: color(text);
   padding: 0;
-  font-family: font(inter);
-  font-weight: 400;
-  font-size: 18px;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
@@ -103,9 +100,7 @@ body {
 }
 
 .chat-input::placeholder {
-  font-family: font(inter);
-  font-weight: 300;
-  font-size: 16px;
+  @apply text-base rounded-lg;
   line-height: auto;
   letter-spacing: 0em;
   text-align: left;
@@ -149,9 +144,6 @@ body {
 }
 
 .user-bubble {
-  font-family: font(poppins);
-  font-weight: 400;
-  font-size: 16px;
   letter-spacing: 0em;
   color: color(text);
   display: flex;
@@ -192,9 +184,6 @@ body {
   padding: 8px 48px;
   background-color: color(primary);
   border-radius: 12px;
-  font-family: font(inter);
-  font-weight: 400;
-  font-size: 18px;
   letter-spacing: 0em;
   text-align: center;
   color: color(secondary);
@@ -217,13 +206,10 @@ body {
   padding: 8px 48px;
   background-color: color(dangerous);
   border-radius: 12px;
-  font-family: font(inter);
-  font-weight: 400;
-  font-size: 18px;
   letter-spacing: 0em;
   text-align: center;
-  color: color(text);
-  fill: color(text);
+  color: color(white);
+  fill: color(white);
   margin: 4px;
 }
 
@@ -425,14 +411,11 @@ body {
   align-items: flex-start;
   gap: 10px;
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 0px;
 }
 
 .chats-text {
-  font-family: font(inter);
-  font-weight: 400;
-  font-size: 18px;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: start;
@@ -468,6 +451,7 @@ body {
 .bbscs {
   opacity: 0;
   display: none !important;
+  min-height: 0;
 }
 
 .settings-wrapper {
@@ -496,8 +480,8 @@ body {
   justify-content: flex-start;
   align-items: center;
 
-  width: 1020px;
-  height: 680px;
+  width: 80%;
+  height: 90%;
   padding: 0px;
 
   background-color: color(popup-background);
@@ -505,6 +489,18 @@ body {
   border-color: color(stroke);
   border-style: solid;
   border-radius: 12px;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 95%;
+  }
+
+  @media (max-width: 498px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+  }
 }
 
 .topbar-setting {
@@ -519,8 +515,13 @@ body {
   border-bottom: 1px solid color(stroke);
 }
 
-.rhs {
+.settings .rhs {
   color: color(text);
+  fill: color(secondary-text);
+}
+
+.settings .lhs {
+  color: color(secondary-text);
   fill: color(secondary-text);
 }
 
@@ -555,6 +556,10 @@ body {
   width: 100%;
   height: auto;
   padding: 0px 10px;
+
+  @media (max-width: 375px) {
+    flex-direction: row;
+  }
 }
 
 .main-setting-items-item-text {
@@ -607,9 +612,6 @@ body {
 }
 
 .inter-info {
-  font-family: font(Inter);
-  font-weight: 400;
-  font-size: 18px;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
@@ -617,9 +619,6 @@ body {
 }
 
 .poppins-info {
-  font-family: font(Poppins);
-  font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;
@@ -627,9 +626,6 @@ body {
 }
 
 .ubuntu-info {
-  font-family: font(Ubuntu);
-  font-weight: 500;
-  font-size: 18px;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: center;

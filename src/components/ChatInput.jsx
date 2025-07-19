@@ -18,7 +18,7 @@ export default function ChatInput({ onSend, disabled }) {
         onChange={(e) => setText(e.target.value)}
         disabled={disabled}
         placeholder="Type your message..."
-        className="chat-input"
+        className="chat-input body"
       />
       <button
         type="submit"
