@@ -45,6 +45,7 @@ p b {
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
+  color: green;
 }
 
 .coffee-container {

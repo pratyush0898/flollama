@@ -12,7 +12,7 @@ export default function Coffee() {
         <h1 className="error-heading">
           <span className="status-code">418</span>
           <span className="dash">&nbsp;&ndash;&nbsp;</span>
-          <span className="message">I'm a teapot</span>
+            <span className="message">I&apos;m a teapot</span>
           <span className="emoji">☕</span>
         </h1>
         <p>
