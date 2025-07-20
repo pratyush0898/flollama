@@ -8,7 +8,7 @@ body,
 html {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1 {
@@ -17,8 +17,12 @@ h1 {
   letter-spacing: 0.3%;
 }
 
-h1 span {
+h1 .status-code {
   color: red;
+}
+
+h1 .emoji {
+  color: blue;
 }
 
 h2 {
@@ -33,10 +37,9 @@ p {
   overflow-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
-  text-wrap: balance; /* smart line breaking */
+  text-wrap: balance;
 }
 
-/* prevent <b> from line-breaking alone */
 p b {
   display: inline-block;
   max-width: 100%;
@@ -56,6 +59,7 @@ p b {
   font-family: monospace;
   padding: 1rem;
   position: relative;
+  transition: all 0.2s ease-in-out;
 }
 
 .container {
@@ -82,8 +86,30 @@ p b {
   text-align: center;
 }
 
-@media (max-width: 544px) {
-    .coffee-container .container h1 {
-        innerHtml: "<span>418</span> &ndash; I&apos;m a teapot &#9749;";
-    }
+.error-heading {
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 0.3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25em;
+  text-align: center;
+}
+
+.status-code {
+  color: red;
+  white-space: nowrap;
+}
+
+.dash {
+  white-space: nowrap;
+}
+
+.message {
+  white-space: nowrap;
+}
+
+.emoji {
+  white-space: nowrap;
 }

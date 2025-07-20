@@ -234,6 +234,36 @@ body {
   margin: 4px;
 }
 
+.google-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+  height: auto;
+  padding: 12px 48px;
+  background-color: color(secondary);
+  border-width: 1px;
+  border-color: color(stroke);
+  border-style: solid;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.google-button:hover {
+  border-color: color(accent);
+}
+
+.google-button:active {
+  translate: 1px 4px;
+}
+
+.google-button span {
+  color: color(secondary-text);
+  fill: color(secondary-text);
+}
+
 .outline-button {
   border: 1px solid color(stroke);
   cursor: pointer;
@@ -461,7 +491,7 @@ body {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(6px); // uniform blur
-  background-color: rgba(0, 0, 0, 0.1); // black with 10% opacity
+  background-color: color(bgblur-color); // black with 10% opacity
   z-index: 9998; // one less than `.settings` to keep it below
   display: flex;
   justify-content: center;
@@ -518,6 +548,7 @@ body {
 .settings .rhs {
   color: color(text);
   fill: color(secondary-text);
+  cursor: pointer;
 }
 
 .settings .lhs {
@@ -637,4 +668,97 @@ body {
   flex-direction: column;
   width: 100%;
   gap: 4px;
+}
+
+.auth-wrapper {
+  position: fixed; // fills viewport regardless of scroll
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px); // uniform blur
+  background-color: color(bgblur-color); // black with 10% opacity
+  z-index: 9998; // one less than `.settings` to keep it below
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 480px;
+  height: 600px;
+  padding: 0;
+
+  background-color: color(popup-background);
+  border-width: 2px;
+  border-color: color(accent);
+  box-shadow: 0px 0px 8px 1px color(accent);
+  border-style: solid;
+  border-radius: 12px;
+  overflow-y: auto;
+
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 95%;
+  }
+
+  @media (max-width: 498px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+  }
+}
+
+.login-text-wapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 333px;
+}
+
+.signup-text-wapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 410px;
+}
+
+.auth .text-wapper h2 {
+  color: color(text);
+  line-height: 48px;
+}
+
+.auth .text-wapper p {
+  color: color(secondary-text);
+  line-height: 24px;
+}
+
+.auth .logo {
+  color: color(logicon);
+  fill: color(logicon);
+}
+
+.closeAuth {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  color: color(secondary-text);
+  fill: color(secondary-text);
 }

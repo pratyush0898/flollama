@@ -25,7 +25,6 @@ export default function ChatInput({ onSend, disabled }) {
         disabled={disabled || !text.trim()}
         className="send-button"
       >
-        {" "}
         <svg
           className="input-icon"
           xmlns="http://www.w3.org/2000/svg"

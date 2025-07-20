@@ -9,7 +9,12 @@ export default function Coffee() {
   return (
     <div className="coffee-container">
       <div className="container">
-        <h1><span>418</span> &ndash; I&apos;m a teapot &#9749;</h1>
+        <h1 className="error-heading">
+          <span className="status-code">418</span>
+          <span className="dash">&nbsp;&ndash;&nbsp;</span>
+          <span className="message">I'm a teapot</span>
+          <span className="emoji">☕</span>
+        </h1>
         <p>
           I cannot brew coffee because I am, permanently,&nbsp;<b>teapot</b>.
         </p>

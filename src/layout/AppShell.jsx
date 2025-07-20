@@ -4,12 +4,15 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import TopBar from "@/components/ui/TopBar";
 import Settings from "@/components/Settings";
+import { LoginPopup, SignupPopup } from "@/components/Auth";
 
 export default function AppShell({ children }) {
   const [isDark, setIsDark] = useState(false);
   const [isSettingOpen, setIsSettingOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -63,6 +66,14 @@ export default function AppShell({ children }) {
     setIsSettingOpen(!isSettingOpen);
   };
 
+  const toggleLogin = () => {
+    setIsLoginOpen(!isLoginOpen);
+  };
+
+  const toggleSignup = () => {
+    setIsSignupOpen(!isSignupOpen);
+  };
+
   return (
     <>
       {isSettingOpen ? (
@@ -74,12 +85,24 @@ export default function AppShell({ children }) {
       ) : (
         <></>
       )}
+      {isLoginOpen ? (
+        <LoginPopup toggleLogin={toggleLogin} />
+      ) : (
+        <></>
+      )}
+      {isSignupOpen ? (
+        <SignupPopup toggleSignup={toggleSignup} />
+      ) : (
+        <></>
+      )}
       <Sidebar
         isOpen={isOpen}
         isDark={isDark}
         toggleTheme={toggleTheme}
         toggleSidebar={toggleSidebar}
         toggleSettings={toggleSettings}
+        toggleLogin={toggleLogin}
+        toggleSignup={toggleSignup}
       />
       <div className="chat-section flex-1">
         <TopBar toggleSidebar={toggleSidebar} isSmallScreen={isSmallScreen} />

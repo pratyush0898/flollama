@@ -680,6 +680,12 @@ $fonts: (
   font-size: 24px;
 }
 
+.body-lg {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .body {
   font-family: var(--font-inter);
   font-weight: 400;
