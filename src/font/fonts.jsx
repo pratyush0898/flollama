@@ -1,4 +1,3 @@
-// app/chat/fonts.js
 import { Inter, Poppins, Ubuntu, Noto_Sans } from "next/font/google";
 
 export const inter = Inter({

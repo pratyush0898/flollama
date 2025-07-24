@@ -50,6 +50,85 @@ body {
   border-bottom: 1px solid color(stroke);
 }
 
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 0 18%;
+  height: 100%;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: 0 10%;
+  }
+  @media (max-width: 375px) {
+    padding: 0 5%;
+  }
+  @media (max-width: 320px) {
+    padding: 0 2%;
+  }
+}
+
+.notfound-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 25%;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    padding-left: 16%;
+  }
+  @media (max-width: 824px) {
+    padding-left: 12%;
+  }
+  @media (max-width: 768px) {
+    padding-left: 10%;
+  }
+  @media (max-width: 689px) {
+    padding: 0 6%;
+  }
+  @media (max-width: 586px) {
+    padding: 0 6%;
+  }
+}
+
+.notfound-wapper {
+  @media (max-width: 586px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem 10vh 1rem;
+  color: color(text);
+  fill: color(text);
+}
+
+.error-message svg {
+  width: 128px;
+  height: 128px;
+  color: color(secondary-text);
+  fill: color(secondary-text);
+}
+
+.error-message p {
+  color: color(secondary-text);
+}
+
 .chat-section {
   display: flex;
   flex-direction: column;
@@ -99,7 +178,50 @@ body {
   color: color(text);
 }
 
+.newchat-input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 20px;
+  background-color: color(secondary);
+  border-radius: 16px;
+}
+
+.newchat-input {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  border: none;
+  outline: none;
+  background: none;
+  color: color(text);
+  padding: 0;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: color(text);
+}
+
+.trademark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  padding: 0px;
+  margin-bottom: 16px;
+}
+
 .chat-input::placeholder {
+  @apply text-base rounded-lg;
+  line-height: auto;
+  letter-spacing: 0em;
+  text-align: left;
+  color: color(tertiary-text);
+}
+
+.newchat-input::placeholder {
   @apply text-base rounded-lg;
   line-height: auto;
   letter-spacing: 0em;
@@ -181,7 +303,7 @@ body {
   gap: 8px;
   width: auto;
   height: 38px;
-  padding: 8px 48px;
+  padding: 12px 48px;
   background-color: color(primary);
   border-radius: 12px;
   letter-spacing: 0em;
@@ -203,7 +325,7 @@ body {
   gap: 8px;
   width: auto;
   height: 38px;
-  padding: 8px 48px;
+  padding: 12px 48px;
   background-color: color(dangerous);
   border-radius: 12px;
   letter-spacing: 0em;
@@ -225,7 +347,7 @@ body {
   gap: 8px;
   width: auto;
   height: 38px;
-  padding: 8px 48px;
+  padding: 12px 48px;
   background-color: color(secondary);
   border-radius: 12px;
   text-align: center;
@@ -275,7 +397,7 @@ body {
   gap: 8px;
   width: auto;
   height: 38px;
-  padding: 8px 48px;
+  padding: 12px 48px;
   background-color: transparent;
   border-radius: 12px;
   text-align: center;
@@ -295,7 +417,7 @@ body {
   gap: 8px;
   width: auto;
   height: 38px;
-  padding: 8px 48px;
+  padding: 12px 48px;
   background-color: transparent;
   border-radius: 12px;
   text-align: center;
@@ -320,7 +442,7 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 38px;
+  height: 12px;
   padding: 8px 48px;
   background-color: transparent;
   border-radius: 12px;
@@ -761,4 +883,9 @@ body {
   cursor: pointer;
   color: color(secondary-text);
   fill: color(secondary-text);
+}
+
+.logicon {
+  display: flex;
+  gap: 1rem;
 }

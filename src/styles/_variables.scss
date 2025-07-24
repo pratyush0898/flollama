@@ -726,7 +726,6 @@ $fonts: (
   font-family: var(--font-ubuntu);
   font-weight: 500;
   font-size: 48px;
-  line-height: 20px;
   text-align: left;
 }
 
@@ -740,6 +739,7 @@ $fonts: (
 
 .logo-sm {
   font-family: var(--font-ubuntu);
+  color: var(--color-secondary-text);
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
