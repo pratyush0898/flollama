@@ -4,37 +4,47 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { saveChatMessages, appendMessage } from "@/lib/chatService";
+import { PulseLoader } from "react-spinners";
 
 export default function NewChatPage() {
   const { user, login } = useAuth();
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) return login();
 
-    // If not logged in yet, kick off Google sign‑in
-    if (!user) {
-      return login();
-    }
-
-    // Determine chatId from input (or fallback to "New Chat")
     const chatId = text.trim() || "New Chat";
 
-    // 1️⃣ Create an empty chat document
-    await saveChatMessages(user.uid, chatId, []);
+    setLoading(true); // ⏳ Show loader
 
-    // 2️⃣ Store the first user message (if there is one)
-    if (text.trim()) {
-      await appendMessage(user.uid, chatId, {
-        role: "user",
-        content: text.trim(),
-      });
+    try {
+      await saveChatMessages(user.uid, chatId, []);
+      if (text.trim()) {
+        await appendMessage(user.uid, chatId, {
+          role: "user",
+          content: text.trim(),
+        });
+      }
+      router.push(`/chat/${encodeURIComponent(chatId)}`);
+    } catch (error) {
+      console.error("Error creating chat:", error);
+      setLoading(false); // ❌ On error, stop loading
     }
-
-    // 3️⃣ Navigate into the chat page to let ChatContainer take over
-    router.push(`/chat/${encodeURIComponent(chatId)}`);
   };
+
+  if (loading) {
+    return (
+      <>
+        <noscript>Loading</noscript>
+        <div className="chat-page">
+          <PulseLoader color="var(--color-text)" size={24} />
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className="chat-page gap-0">
@@ -65,7 +75,7 @@ export default function NewChatPage() {
           placeholder="Type your message…"
           className="newchat-input body w-full"
         />
-      <button type="submit" className="send-button">
+        <button type="submit" className="send-button">
           <svg
             className="input-icon"
             xmlns="http://www.w3.org/2000/svg"
