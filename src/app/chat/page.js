@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { saveChatMessages, appendMessage } from "@/lib/chatService";
-import { PulseLoader } from "react-spinners";
+import { GridLoader } from "react-spinners";
 
 export default function NewChatPage() {
   const { user, login } = useAuth();
@@ -40,7 +40,7 @@ export default function NewChatPage() {
       <>
         <noscript>Loading</noscript>
         <div className="chat-page">
-          <PulseLoader color="var(--color-text)" size={24} />
+          <GridLoader color="var(--color-text)" size={24} />
         </div>
       </>
     );
