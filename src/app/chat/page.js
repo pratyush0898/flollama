@@ -18,7 +18,7 @@ export default function NewChatPage() {
 
     const chatId = text.trim() || "New Chat";
 
-    setLoading(true); // ⏳ Show loader
+    setLoading(true);
 
     try {
       await saveChatMessages(user.uid, chatId, []);
@@ -31,7 +31,7 @@ export default function NewChatPage() {
       router.push(`/chat/${encodeURIComponent(chatId)}`);
     } catch (error) {
       console.error("Error creating chat:", error);
-      setLoading(false); // ❌ On error, stop loading
+      setLoading(false);
     }
   };
 

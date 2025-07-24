@@ -69,7 +69,6 @@ export default function ChatContainer({ initialMessages = [], chatId }) {
     }
   }
 
-  // console.log(messages[messages.length - 1]);
   useEffect(() => {
     if (messages.length == 1 && !loading && !streamingMsg) {
       generateMessage(messages[messages.length - 1]);

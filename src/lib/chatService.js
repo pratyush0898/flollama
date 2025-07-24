@@ -6,6 +6,7 @@ import {
   getDocs,
   updateDoc,
   deleteDoc,
+  onSnapshot,
 } from "firebase/firestore";
 import { db } from "@/firebase/firebase.js";
 
@@ -21,16 +22,31 @@ export async function appendMessage(uid, chatName, message) {
   await updateDoc(chatRef, { messages: [...prev, message] });
 }
 
-export async function loadChatMessages(uid, chatName) {
+// ✅ Real-time: load chat messages
+export function loadChatMessages(uid, chatName, callback) {
   const chatRef = doc(db, "users", uid, "chats", chatName);
-  const snap = await getDoc(chatRef);
-  return snap.exists() ? snap.data().messages : [];
+  return onSnapshot(chatRef, (snap) => {
+    if (snap.exists()) {
+      callback(snap.data().messages || []);
+    } else {
+      callback([]);
+    }
+  });
 }
 
-export async function listUserChats(uid) {
+export function listenToUserChats(uid, callback) {
   const chatsCol = collection(db, "users", uid, "chats");
-  const snaps = await getDocs(chatsCol);
-  return snaps.docs.map((d) => d.id);
+  return onSnapshot(chatsCol, (snapshot) => {
+    const chatIds = snapshot.docs.map((doc) => doc.id);
+    callback(chatIds);
+  });
+}
+
+export function listUserChats(uid, callback) {
+  const chatsCol = collection(db, "users", uid, "chats");
+  return onSnapshot(chatsCol, (snaps) => {
+    callback(snaps.docs.map((d) => d.id));
+  });
 }
 
 export async function clearAllChats(uid) {
@@ -39,8 +55,9 @@ export async function clearAllChats(uid) {
   await Promise.all(snaps.docs.map((d) => deleteDoc(d.ref)));
 }
 
-export async function doesChatExist(uid, chatName) {
+export function doesChatExist(uid, chatName, callback) {
   const chatRef = doc(db, "users", uid, "chats", chatName);
-  const chatSnap = await getDoc(chatRef);
-  return chatSnap.exists();
+  return onSnapshot(chatRef, (snap) => {
+    callback(snap.exists());
+  });
 }

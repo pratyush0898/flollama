@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { PrimaryButton, SidebarButton } from "@/components/ui/Button.jsx";
 import Link from "next/link";
-import ChatList from "./sidebar/chatList";
+import { useAuth } from "@/context/AuthContext";
+import { listenToUserChats } from "@/lib/chatService";
 
 const Sidebar = ({
   isOpen,
@@ -10,6 +12,16 @@ const Sidebar = ({
   toggleSidebar,
   toggleSettings,
 }) => {
+  const { user } = useAuth();
+  const [chats, setChats] = useState([]);
+
+  useEffect(() => {
+    if (!user) return;
+
+    const unsubscribe = listenToUserChats(user.uid, setChats);
+
+    return () => unsubscribe();
+  }, [user]);
 
   return (
     <div className={`sidebar ${isOpen ? "w-[290px] open" : "w-[60px]"}`}>
@@ -112,7 +124,13 @@ const Sidebar = ({
             </div>
             <div className="chats-group">
               <span className="chats-text body">Chats</span>
-              <ChatList />
+              <div className="chats-wapper">
+                {chats.map((c) => (
+                  <Link key={c} href={`/chat/${c}`}>
+                    <SidebarButton>{c}</SidebarButton>
+                  </Link>
+                ))}
+              </div>{" "}
             </div>
           </div>
         </div>

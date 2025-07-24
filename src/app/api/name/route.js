@@ -1,5 +1,3 @@
-// File: /app/api/summarize-title/route.js
-
 import { NextResponse } from 'next/server';
 import { Ollama } from 'ollama';
 
@@ -27,7 +25,6 @@ export async function POST(req) {
 
     let title = res.message?.content?.trim().toLowerCase();
 
-    // Optional fallback if model returns nothing
     if (!title || title.length === 0) {
       title = input.split(" ").slice(0, 4).join(" ").toLowerCase();
     }

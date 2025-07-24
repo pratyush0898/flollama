@@ -6,7 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { doesChatExist, loadChatMessages } from "@/lib/chatService";
 import { PrimaryButton, SecondaryButton } from "@/components/ui/Button";
 import Link from "next/link";
-import { PulseLoader } from "react-spinners";
+import { PulseLoader, SyncLoader } from "react-spinners";
 
 export default function ChatPage({ params }) {
   const { user } = useAuth();
@@ -19,29 +19,43 @@ export default function ChatPage({ params }) {
   useEffect(() => {
     if (!user || !decodedChatName) return;
 
-    doesChatExist(user.uid, decodedChatName)
-      .then((exists) => {
-        if (!exists) {
-          setNotFound(true);
-          return;
-        }
+    let chatExistsUnsub;
+    let messagesUnsub;
 
-        return loadChatMessages(user.uid, decodedChatName)
-          .then((messages) => {
-            setInitialMessages(messages || []);
-          })
-          .catch(() => {
-            console.error("Error loading messages");
-            setNotFound(true);
-          });
-      })
-      .catch((err) => {
-        console.error("Error checking chat existence", err);
+    chatExistsUnsub = doesChatExist(user.uid, decodedChatName, (exists) => {
+      if (!exists) {
         setNotFound(true);
-      });
+        setInitialMessages(null);
+        if (messagesUnsub) messagesUnsub();
+        return;
+      }
+
+      // 🔁 If exists, load messages
+      messagesUnsub = loadChatMessages(
+        user.uid,
+        decodedChatName,
+        (messages) => {
+          setInitialMessages(messages || []);
+        }
+      );
+    });
+
+    return () => {
+      if (chatExistsUnsub) chatExistsUnsub();
+      if (messagesUnsub) messagesUnsub();
+    };
   }, [user, decodedChatName]);
 
-  if (!user) return <noscript>Waiting for authentication…</noscript>;
+  if (!user)
+    return (
+      <>
+        <noscript>Waiting for authentication…</noscript>
+        <div className="chat-page">
+          <SyncLoader color="var(--color-text)" size={32} />
+        </div>
+      </>
+    );
+
   if (notFound)
     return (
       <div className="chat-page px-4 sm:px-8">

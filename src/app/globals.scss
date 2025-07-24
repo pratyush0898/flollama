@@ -889,3 +889,11 @@ body {
   display: flex;
   gap: 1rem;
 }
+
+.pfp {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid color(stroke);
+}
