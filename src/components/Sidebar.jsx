@@ -109,7 +109,7 @@ const Sidebar = ({
           <div className="top flex-row items-start">
             <div className="action-buttons flex-row">
               <Link href="/chat">
-                <PrimaryButton className="flex-row w-full">
+                <PrimaryButton className="flex-row w-full pri-w-button">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"

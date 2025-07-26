@@ -48,7 +48,7 @@ export default function NewChatPage() {
 
   return (
     <div className="chat-page gap-0">
-      <div className="trademark">
+      <div className="trademark mb-1 logicon">
         <svg
           width={72}
           viewBox="0 0 350 372"

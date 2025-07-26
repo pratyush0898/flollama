@@ -9,21 +9,24 @@ const Settings = ({ toggleTheme, isDark, toggleSettings }) => {
   const { user, logout } = useAuth();
 
   const clearChat = () => {
-    clearAllChats(user.uid)
-  }
+    clearAllChats(user.uid);
+  };
 
   useEffect(() => {
+    if (!isSettingsOpen) return;
+
     const handleClickOutside = (event) => {
       if (settingsRef.current && !settingsRef.current.contains(event.target)) {
         toggleSettings();
       }
-    }
+    };
 
     const handleEsc = (event) => {
       if (event.key === "Escape") {
         toggleSettings();
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEsc);
 
@@ -31,7 +34,7 @@ const Settings = ({ toggleTheme, isDark, toggleSettings }) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEsc);
     };
-  }, [toggleSettings]);
+  }, [isSettingsOpen, toggleSettings]);
 
   return (
     <div className="settings-wrapper">
@@ -122,7 +125,10 @@ const Settings = ({ toggleTheme, isDark, toggleSettings }) => {
               <span className="main-setting-items-item-text body">
                 Clear All Conversations
               </span>
-              <DangerousOutlineButton className="button-w-auto" onClick={clearChat}>
+              <DangerousOutlineButton
+                className="button-w-auto"
+                onClick={clearChat}
+              >
                 <svg
                   data-testid="geist-icon"
                   width="18"

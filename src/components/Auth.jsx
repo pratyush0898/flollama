@@ -11,19 +11,29 @@ const LoginPopup = () => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (loginRef.current && !loginRef.current.contains(e.target))
+      if (
+        isLoginOpen &&
+        loginRef.current &&
+        !loginRef.current.contains(e.target)
+      ) {
         toggleLogin();
+      }
     };
+
     const handleEsc = (e) => {
-      if (e.key === "Escape") toggleLogin();
+      if (e.key === "Escape" && isLoginOpen) {
+        toggleLogin();
+      }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEsc);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEsc);
     };
-  }, [toggleLogin]);
+  }, [toggleLogin, isLoginOpen]);
 
   if (!isLoginOpen) return null;
 
@@ -77,19 +87,29 @@ const SignupPopup = () => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (signupRef.current && !signupRef.current.contains(e.target))
+      if (
+        isSignupOpen &&
+        signupRef.current &&
+        !signupRef.current.contains(e.target)
+      ) {
         toggleSignup();
+      }
     };
+
     const handleEsc = (e) => {
-      if (e.key === "Escape") toggleSignup();
+      if (e.key === "Escape" && isSignupOpen) {
+        toggleSignup();
+      }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEsc);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEsc);
     };
-  }, [toggleSignup]);
+  }, [toggleSignup, isSignupOpen]);
 
   if (!isSignupOpen) return null;
 

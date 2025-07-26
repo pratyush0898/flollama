@@ -18,7 +18,9 @@
   --color-light-dangerous-text: hsl(0, 72%, 51%);
   --color-light-popup-background: hsl(210, 40%, 96%);
   --color-light-hover-background: hsl(207, 35%, 94%);
-
+	--color-light-shadow: #0000001a;
+  
+  
   /* === Light Slate === */
   --color-light-slate-50: #707070;
   --color-light-slate-100: #858585;
@@ -30,7 +32,7 @@
   --color-light-slate-700: #d1d1d1;
   --color-light-slate-800: #d6d6d6;
   --color-light-slate-900: #e3e3e3;
-
+  
   /* === Dark === */
   --color-dark-text: hsl(0, 0%, 90%);
   --color-dark-secondary-text: hsla(0, 0%, 100%, 0.6);
@@ -47,7 +49,8 @@
   --color-dark-dangerous-text: hsl(0, 74%, 42%);
   --color-dark-popup-background: hsl(0, 0%, 16%);
   --color-dark-hover-background: hsl(0, 0%, 20%);
-
+	--color-dark-shadow: #0000001a;
+  
   /* === Dark Slate === */
   --color-dark-slate-50: #8f8f8f;
   --color-dark-slate-100: #7a7a7a;
@@ -59,7 +62,7 @@
   --color-dark-slate-700: #2e2e2e;
   --color-dark-slate-800: #292929;
   --color-dark-slate-900: #1d1d1d;
-
+  
   /* === Gray === */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
@@ -71,7 +74,7 @@
   --color-gray-700: #374151;
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
-
+  
   /* === Zinc === */
   --color-zinc-50: #fafafa;
   --color-zinc-100: #f4f4f5;
@@ -83,7 +86,7 @@
   --color-zinc-700: #3f3f46;
   --color-zinc-800: #27272a;
   --color-zinc-900: #18181b;
-
+  
   /* === Neutral === */
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
@@ -95,7 +98,7 @@
   --color-neutral-700: #404040;
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
-
+  
   /* === Stone === */
   --color-stone-50: #fafaf9;
   --color-stone-100: #f5f5f4;
@@ -107,7 +110,7 @@
   --color-stone-700: #44403c;
   --color-stone-800: #292524;
   --color-stone-900: #1c1917;
-
+  
   /* === Red === */
   --color-red-50: #fef2f2;
   --color-red-100: #fee2e2;
@@ -119,7 +122,7 @@
   --color-red-700: #b91c1c;
   --color-red-800: #991b1b;
   --color-red-900: #7f1d1d;
-
+  
   /* === Orange === */
   --color-orange-50: #fff7ed;
   --color-orange-100: #ffedd5;
@@ -131,7 +134,7 @@
   --color-orange-700: #c2410c;
   --color-orange-800: #9a3412;
   --color-orange-900: #7c2d12;
-
+  
   /* === Amber === */
   --color-amber-50: #fffbeb;
   --color-amber-100: #fef3c7;
@@ -143,7 +146,7 @@
   --color-amber-700: #b45309;
   --color-amber-800: #92400e;
   --color-amber-900: #78350f;
-
+  
   /* === Yellow === */
   --color-yellow-50: #fefce8;
   --color-yellow-100: #fef9c3;
@@ -155,7 +158,7 @@
   --color-yellow-700: #a16207;
   --color-yellow-800: #854d0e;
   --color-yellow-900: #713f12;
-
+  
   /* === Lime === */
   --color-lime-50: #f7fee7;
   --color-lime-100: #ecfccb;
@@ -167,7 +170,7 @@
   --color-lime-700: #4d7c0f;
   --color-lime-800: #3f6212;
   --color-lime-900: #365314;
-
+  
   /* === Green === */
   --color-green-50: #f0fdf4;
   --color-green-100: #dcfce7;
@@ -179,7 +182,7 @@
   --color-green-700: #15803d;
   --color-green-800: #166534;
   --color-green-900: #14532d;
-
+  
   /* === Emerald === */
   --color-emerald-50: #ecfdf5;
   --color-emerald-100: #d1fae5;
@@ -191,7 +194,7 @@
   --color-emerald-700: #047857;
   --color-emerald-800: #065f46;
   --color-emerald-900: #064e3b;
-
+  
   /* === Teal === */
   --color-teal-50: #f0fdfa;
   --color-teal-100: #ccfbf1;
@@ -203,7 +206,7 @@
   --color-teal-700: #0f766e;
   --color-teal-800: #115e59;
   --color-teal-900: #134e4a;
-
+  
   /* === Cyan === */
   --color-cyan-50: #ecfeff;
   --color-cyan-100: #cffafe;
@@ -215,7 +218,7 @@
   --color-cyan-700: #0e7490;
   --color-cyan-800: #155e75;
   --color-cyan-900: #164e63;
-
+  
   /* === Sky === */
   --color-sky-50: #f0f9ff;
   --color-sky-100: #e0f2fe;
@@ -227,7 +230,7 @@
   --color-sky-700: #0369a1;
   --color-sky-800: #075985;
   --color-sky-900: #0c4a6e;
-
+  
   /* === Blue === */
   --color-blue-50: #eff6ff;
   --color-blue-100: #dbeafe;
@@ -239,7 +242,7 @@
   --color-blue-700: #1d4ed8;
   --color-blue-800: #1e40af;
   --color-blue-900: #1e3a8a;
-
+  
   /* === Indigo === */
   --color-indigo-50: #eef2ff;
   --color-indigo-100: #e0e7ff;
@@ -263,7 +266,7 @@
   --color-violet-700: #6d28d9;
   --color-violet-800: #5b21b6;
   --color-violet-900: #4c1d95;
-
+  
   /* === Purple === */
   --color-purple-50: #faf5ff;
   --color-purple-100: #f3e8ff;
@@ -329,6 +332,7 @@
   --color-dangerous-text: var(--color-light-dangerous-text);
   --color-popup-background: var(--color-light-popup-background);
   --color-hover-background: var(--color-light-hover-background);
+  --color-shadow: var(--color-light-shadow);
 }
 
 [data-theme="dark"] {
@@ -347,6 +351,7 @@
   --color-dangerous-text: var(--color-dark-dangerous-text);
   --color-popup-background: var(--color-dark-popup-background);
   --color-hover-background: var(--color-dark-hover-background);
+  --color-shadow: var(--color-dark-shadow);
 }
 
 $colors: (
@@ -367,6 +372,7 @@ $colors: (
   dangerous-text: var(--color-dangerous-text),
   popup-background: var(--color-popup-background),
   hover-background: var(--color-hover-background),
+  shadow: var(--color-shadow),
   slate: (
     50: var(--color-slate-50),
     100: var(--color-slate-100),
@@ -724,6 +730,7 @@ $fonts: (
 
 .logo {
   font-family: var(--font-ubuntu);
+  color: var(--color-logicon);
   font-weight: 500;
   font-size: 48px;
   text-align: left;
@@ -731,15 +738,25 @@ $fonts: (
 
 .logo-small {
   font-family: var(--font-ubuntu);
+  color: var(--color-logicon);
   font-weight: 400;
   font-size: 28px;
   line-height: 20px;
   text-align: left;
 }
 
+.logo-mid {
+  font-family: var(--font-ubuntu);
+  color: var(--color-logicon);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 41px;
+  text-align: left;
+}
+
 .logo-sm {
   font-family: var(--font-ubuntu);
-  color: var(--color-secondary-text);
+  color: var(--color-logicon);
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;

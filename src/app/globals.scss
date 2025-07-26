@@ -1,5 +1,4 @@
 @use "@/styles/variables" as *;
-@import "tailwindcss";
 
 @function font($keys...) {
   $value: $fonts;
@@ -48,6 +47,14 @@ body {
   width: 100%;
   padding: 10px 20px;
   border-bottom: 1px solid color(stroke);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .chat-page {
@@ -206,15 +213,15 @@ body {
 .trademark {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: auto;
   height: auto;
   padding: 0px;
-  margin-bottom: 16px;
 }
 
 .chat-input::placeholder {
-  @apply text-base rounded-lg;
+  font-size: 1rem;
+  border-radius: 0.5rem;
   line-height: auto;
   letter-spacing: 0em;
   text-align: left;
@@ -222,7 +229,8 @@ body {
 }
 
 .newchat-input::placeholder {
-  @apply text-base rounded-lg;
+  font-size: 1rem;
+  border-radius: 0.5rem;
   line-height: auto;
   letter-spacing: 0em;
   text-align: left;
@@ -302,15 +310,21 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 38px;
-  padding: 12px 48px;
+  height: auto;
+  padding: 8px 24px;
   background-color: color(primary);
-  border-radius: 12px;
+  border-radius: 8px;
   letter-spacing: 0em;
   text-align: center;
   color: color(secondary);
   fill: color(secondary);
   margin: 4px;
+}
+
+.pri-w-button {
+  height: 38px;
+  padding: 12px 48px;
+  border-radius: 12px;
 }
 
 .dangerous-button {
@@ -324,10 +338,10 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 38px;
-  padding: 12px 48px;
+  height: auto;
+  padding: 8px 24px;
   background-color: color(dangerous);
-  border-radius: 12px;
+  border-radius: 8px;
   letter-spacing: 0em;
   text-align: center;
   color: color(white);
@@ -346,10 +360,10 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 38px;
-  padding: 12px 48px;
+  height: auto;
+  padding: 8px 24px;
   background-color: color(secondary);
-  border-radius: 12px;
+  border-radius: 8px;
   text-align: center;
   color: color(text);
   fill: color(text);
@@ -361,15 +375,15 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   width: auto;
   height: auto;
-  padding: 12px 48px;
+  padding: 8px 24px;
   background-color: color(secondary);
   border-width: 1px;
   border-color: color(stroke);
   border-style: solid;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -396,10 +410,10 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 38px;
-  padding: 12px 48px;
+  height: auto;
+  padding: 8px 24px;
   background-color: transparent;
-  border-radius: 12px;
+  border-radius: 8px;
   text-align: center;
   color: color(text);
   fill: color(text);
@@ -416,10 +430,10 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 38px;
-  padding: 12px 48px;
+  height: auto;
+  padding: 8px 24px;
   background-color: transparent;
-  border-radius: 12px;
+  border-radius: 8px;
   text-align: center;
   color: color(dangerous-text);
   fill: color(dangerous-text);
@@ -442,10 +456,9 @@ body {
   align-items: center;
   gap: 8px;
   width: auto;
-  height: 12px;
-  padding: 8px 48px;
+  height: auto;
+  padding: 8px 24px;
   background-color: transparent;
-  border-radius: 12px;
   letter-spacing: 0em;
   text-align: center;
   color: color(text);
@@ -896,4 +909,128 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid color(stroke);
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.logicon {
+  color: color(logicon);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px 50px;
+  border-bottom: 1px solid color(stroke);
+
+  @media (max-width: 1024px) {
+    padding: 8px 32px;
+  }
+}
+
+.navmenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 0px;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: color(background);
+  border: 2px solid color(stroke);
+  color: color(text);
+  fill: color(text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 8px color(shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  border-color: color(accent);
+  color: color(text);
+}
+
+.navbar-mobile-wapper {
+  padding: 1rem;
+  position: fixed;
+  gap: 48px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.navbar-mobile {
+  padding: 1rem;
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(194, 32%, 92%, 0.24);
+  backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px color(shadow), 10px 0 10px color(shadow),
+    0 10px 10px color(shadow), 0 -10px 10px color(shadow);
+  list-style: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+[data-theme="dark"] .navbar-mobile {
+  background-color: hsla(0, 0%, 16%, 0.24);
+}
+
+.navbar-mobile > * {
+  margin-bottom: 8px;
+}
+
+.navtopbar {
+  color: color(logicon);
+  fill: color(logicon);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid color(stroke);
+}
+
+@import "tailwindcss";
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.w-full {
+  width: 100%;
 }
