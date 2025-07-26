@@ -1,49 +1,80 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MessageList from "./MessageList.jsx";
 import ChatInput from "./ChatInput.jsx";
 import { chatWithFlollama } from "@/lib/ollamaApi.js";
+import { useAuth } from "@/context/AuthContext";
+import { appendMessage } from "@/lib/chatService.js";
 
-export default function ChatContainer({ initialMessages }) {
+export default function ChatContainer({ initialMessages = [], chatId }) {
   const [messages, setMessages] = useState(initialMessages);
   const [loading, setLoading] = useState(false);
   const [streamingMsg, setStreamingMsg] = useState("");
 
+  const { user } = useAuth();
+
   async function sendMessage(text) {
     const trimmed = text.trim();
-    if (!trimmed) return;
+    if (!trimmed || !user || !chatId) return;
 
-    // 1) Add user message
-    const next = [...messages, { role: "user", content: trimmed }];
-    setMessages(next);
+    const userMsg = { role: "user", content: trimmed };
+
+    const updatedMessages = [...messages, userMsg];
+    setMessages(updatedMessages);
     setLoading(true);
     setStreamingMsg("");
+    await appendMessage(user?.uid, chatId, userMsg);
 
     let fullReply = "";
     try {
-      // 2) Stream AI reply
-      await chatWithFlollama(next, (token) => {
+      await chatWithFlollama(updatedMessages, (token) => {
         fullReply += token;
         setStreamingMsg((prev) => prev + token);
       });
 
-      // 3) Finalize assistant message
-      setMessages((msgs) => [
-        ...msgs,
-        { role: "assistant", content: fullReply },
-      ]);
+      const assistantMsg = { role: "assistant", content: fullReply };
+
+      setMessages((msgs) => [...msgs, assistantMsg]);
+      await appendMessage(user?.uid, chatId, assistantMsg);
     } catch (err) {
-      setMessages((msgs) => [
-        ...msgs,
-        { role: "assistant", content: "Error: " + err.message },
-      ]);
+      const errMsg = { role: "assistant", content: "Error: " + err.message };
+      setMessages((msgs) => [...msgs, errMsg]);
+      await appendMessage(user?.uid, chatId, errMsg);
+    } finally {
+      setLoading(false);
+      setStreamingMsg("");
+    }
+  }
+  async function generateMessage(userMessage) {
+    const userMsg = userMessage;
+
+    let fullReply = "";
+    try {
+      await chatWithFlollama([userMsg], (token) => {
+        fullReply += token;
+        setStreamingMsg((prev) => prev + token);
+      });
+
+      const assistantMsg = { role: "assistant", content: fullReply };
+
+      setMessages((msgs) => [...msgs, assistantMsg]);
+      await appendMessage(user?.uid, chatId, assistantMsg);
+    } catch (err) {
+      const errMsg = { role: "assistant", content: "Error: " + err.message };
+      setMessages((msgs) => [...msgs, errMsg]);
+      await appendMessage(user?.uid, chatId, errMsg);
     } finally {
       setLoading(false);
       setStreamingMsg("");
     }
   }
 
-  console.log(messages);
+  useEffect(() => {
+    if (messages.length == 1 && !loading && !streamingMsg) {
+      generateMessage(messages[messages.length - 1]);
+    }
+  }, [messages]);
+
   return (
     <div className="chat-container">
       <MessageList

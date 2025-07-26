@@ -9,6 +9,8 @@ module.exports = {
       },
     ];
   },
-
+  //   images: {
+  //   remotePatterns: [new URL('www.gstatic.com')],
+  // },
   reactStrictMode: false,
 };

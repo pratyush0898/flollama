@@ -1,4 +1,8 @@
+import { AuthProvider } from "@/context/AuthContext";
 import { inter, poppins, ubuntu, noto } from "@/font/fonts.jsx";
+import "@/app/globals.scss";
+import ThemeProvider from "@/utils/ThemeProvider";
+import { AuthModalProvider } from "@/context/AuthModalContext";
 
 export const metadata = {
   title: "Flollama – Your AI Chat Assistant",
@@ -44,7 +48,11 @@ export default function RootLayout({ children }) {
       <body
         className={`app-body ${inter.variable} ${poppins.variable} ${ubuntu.variable} ${noto.variable}`}
       >
-        {children}
+        <ThemeProvider>
+          <AuthModalProvider>
+            <AuthProvider>{children}</AuthProvider>
+          </AuthModalProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
