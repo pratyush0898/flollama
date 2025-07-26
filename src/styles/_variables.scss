@@ -10,7 +10,7 @@
   --color-light-primary: hsl(0, 0%, 7%);
   --color-light-secondary: hsl(194, 32%, 92%);
   --color-light-tertiary: hsl(207, 35%, 94%);
-  --color-light-accent: #c6c7f8;
+  --color-light-accent: #5354A2;
   --color-light-bgblur-color: hsla(0, 0%, 100%, 0.1);
   --color-light-stroke: hsla(0, 0%, 11%, 0.1);
   --color-light-logicon: hsl(0, 0%, 24%);
@@ -19,8 +19,7 @@
   --color-light-popup-background: hsl(210, 40%, 96%);
   --color-light-hover-background: hsl(207, 35%, 94%);
 	--color-light-shadow: #0000001a;
-  
-  
+
   /* === Light Slate === */
   --color-light-slate-50: #707070;
   --color-light-slate-100: #858585;
@@ -41,7 +40,7 @@
   --color-dark-primary: hsl(208, 100%, 97%);
   --color-dark-secondary: hsl(0, 0%, 16%);
   --color-dark-tertiary: hsl(0, 0%, 18%);
-  --color-dark-accent: hsl(239, 32%, 48%);
+  --color-dark-accent: #c6c7f8;
   --color-dark-bgblur-color: hsla(0, 0%, 0%, 0.1);
   --color-dark-stroke: hsla(0, 0%, 100%, 0.1);
   --color-dark-logicon: hsl(0, 0%, 76%);
@@ -50,7 +49,7 @@
   --color-dark-popup-background: hsl(0, 0%, 16%);
   --color-dark-hover-background: hsl(0, 0%, 20%);
 	--color-dark-shadow: #0000001a;
-  
+
   /* === Dark Slate === */
   --color-dark-slate-50: #8f8f8f;
   --color-dark-slate-100: #7a7a7a;
@@ -650,8 +649,9 @@ $fonts: (
 
 .biggest {
   font-family: var(--font-poppins);
-  font-weight: 800;
-  font-size: 96px;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 76px;
   letter-spacing: 1%;
 }
 
@@ -683,6 +683,12 @@ $fonts: (
 .h5 {
   font-family: var(--font-inter);
   font-weight: 500;
+  font-size: 24px;
+}
+
+.body-xlg {
+  font-family: var(--font-inter);
+  font-weight: 400;
   font-size: 24px;
 }
 
@@ -760,5 +766,14 @@ $fonts: (
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
+  text-align: left;
+}
+
+.logo-lsm {
+  font-family: var(--font-ubuntu);
+  color: var(--color-logicon);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 16px;
   text-align: left;
 }

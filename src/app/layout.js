@@ -1,8 +1,9 @@
-import { AuthProvider } from "@/context/AuthContext";
-import { inter, poppins, ubuntu, noto } from "@/font/fonts.jsx";
 import "@/app/globals.scss";
+import "@/styles/tailwind.css"
 import ThemeProvider from "@/utils/ThemeProvider";
 import { AuthModalProvider } from "@/context/AuthModalContext";
+import { AuthProvider } from "@/context/AuthContext";
+import { inter, noto, poppins, ubuntu } from "@/font/fonts";
 
 export const metadata = {
   title: "Flollama – Your AI Chat Assistant",
@@ -19,7 +20,6 @@ export const metadata = {
   ],
   authors: [{ name: "Pratyush Kumar", url: "https://github.com/pratyush0898" }],
   creator: "Flollama Team",
-  themeColor: "#0f172a",
   icons: {
     icon: "/favicon.svg",
   },

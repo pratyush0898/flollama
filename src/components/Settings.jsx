@@ -4,7 +4,7 @@ import { DangerousButton, DangerousOutlineButton } from "./ui/Button";
 import { useAuth } from "@/context/AuthContext";
 import { clearAllChats } from "@/lib/chatService";
 
-const Settings = ({ toggleTheme, isDark, toggleSettings }) => {
+const Settings = ({ toggleTheme, isDark, toggleSettings, isSettingsOpen }) => {
   const settingsRef = useRef(null);
   const { user, logout } = useAuth();
 

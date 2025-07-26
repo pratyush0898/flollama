@@ -34,7 +34,7 @@ const OutlineButton = ({ children, className = "", ...props }) => {
   );
 };
 
-const Link = ({ children, className = "", ...props }) => {
+const LinkButton = ({ children, className = "", ...props }) => {
   return (
     <button
       className={`link-button body ${className}`}
@@ -78,4 +78,4 @@ const DangerousOutlineButton = ({ children, className = "", ...props }) => {
   );
 };
 
-export { PrimaryButton, SecondaryButton, OutlineButton, Link, SidebarButton, DangerousButton, DangerousOutlineButton };
+export { PrimaryButton, SecondaryButton, OutlineButton, LinkButton, SidebarButton, DangerousButton, DangerousOutlineButton };

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+    height: auto;
+}
