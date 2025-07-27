@@ -1,5 +1,6 @@
 "use client";
 import { LoginPopup, SignupPopup } from "@/components/Auth";
+import CTA from "@/components/Page/CTA";
 import Hero from "@/components/Page/Hero";
 import NavBar from "@/components/Page/NavBar";
 import ThemeToggle from "@/components/ui/ThemeToggle";
@@ -17,6 +18,7 @@ export default function Index() {
     <div className="page">
       <NavBar toggleLogin={toggleLogin} toggleSignup={toggleSignup} />
       <Hero toggleLogin={toggleLogin} toggleSignup={toggleSignup} />
+      <CTA toggleLogin={toggleLogin} toggleSignup={toggleSignup} />
       <LoginPopup />
       <SignupPopup />
       <ThemeToggle />
