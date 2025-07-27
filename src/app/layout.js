@@ -19,7 +19,7 @@ export const metadata = {
     "open-source chatbot",
   ],
   authors: [{ name: "Pratyush Kumar", url: "https://github.com/pratyush0898" }],
-  creator: "Flollama Team",
+  creator: "Pratyush kumar",
   icons: {
     icon: "/favicon.svg",
   },
