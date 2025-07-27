@@ -122,7 +122,7 @@ body {
   height: 100%;
   width: 100%;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1048px) {
     padding-left: 16%;
   }
   @media (max-width: 824px) {
@@ -965,7 +965,7 @@ body {
   padding: 10px 50px;
   border-bottom: 1px solid color(stroke);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1048px) {
     padding: 8px 32px;
   }
 }
@@ -1103,18 +1103,21 @@ body {
     border: 1px solid color(stroke);
     border-radius: 16px;
     box-shadow: 0 0 64px -1px rgba(255, 255, 255, 0.12);
-    background-image: url("/flollama-new-chat.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  [data-theme="light"] .img {
-    background-image: url("/flollama-new-chat-light.png");
-  }
 }
 
-@media (min-width: 640px) and (max-width: 1024px) {
+[data-theme="dark"] .hero .img {
+  background-image: url("/flollama-new-chat.png");
+}
+[data-theme="light"] .hero .img {
+  background-image: url("/flollama-new-chat-light.png");
+}
+
+@media (min-width: 640px) and (max-width: 1048px) {
   .hero {
     flex-direction: row;
     align-items: center;
@@ -1204,11 +1207,21 @@ body {
         font-size: 36px;
         line-height: 1.2;
       }
+
       p.body-xlg {
         font-size: 18px;
         line-height: 1.4;
       }
     }
+  }
+
+  // ⬇ Theme-specific overrides for background image
+  [data-theme="dark"] .hero::before {
+    background: url("/flollama-new-chat.png") center/cover no-repeat;
+  }
+
+  [data-theme="light"] .hero::before {
+    background: url("/flollama-new-chat-light.png") center/cover no-repeat;
   }
 }
 
@@ -1234,7 +1247,14 @@ body {
     }
   }
 
+  @media (max-width: 1024px) {
+    padding: 64px 96px;
+  }
+
   .text {
+    h1 {
+      color: color(text);
+    }
     p {
       color: color(secondary-text);
     }
@@ -1284,7 +1304,7 @@ body {
     padding: 0px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1048px) {
     padding: 8px 32px;
 
     .footer-menu {
@@ -1340,4 +1360,103 @@ body {
 .a {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+.about {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 110px 0;
+
+  border-top: 1px solid color(stroke);
+
+  .lhs {
+    img {
+      width: 448px;
+      height: auto;
+      display: block;
+      border-radius: 100%;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+      border: 2px solid color(accent);
+
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+      }
+
+      &:active {
+        transform: scale(0.99);
+      }
+    }
+  }
+
+  .rhs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    h1 {
+      color: color(text);
+      line-height: 48px;
+    }
+    p {
+      max-width: 486px;
+      color: color(secondary-text);
+      span {
+        font-weight: bold;
+        font-family: font(Ubuntu);
+      }
+    }
+    .action-buttons {
+      display: flex;
+      flex-direction: row;
+      padding-right: 1rem;
+      width: 100%;
+    }
+  }
+  @media (max-width: 1048px) {
+    padding: 64px 0;
+    .lhs {
+      img {
+        width: 352px;
+      }
+    }
+    .rhs {
+      h1 {
+        color: color(text);
+        line-height: 32px;
+        font-size: 36px;
+      }
+      p {
+        color: color(secondary-text);
+        font-size: 22px;
+        span {
+          font-weight: bold;
+          font-family: font(Ubuntu);
+        }
+      }
+    }
+  }
+  @media (max-width: 749px) {
+    .lhs {
+      display: none;
+    }
+
+    .rhs {
+      justify-content: center;
+      text-align: center;
+      h1 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .action-buttons {
+        justify-content: center;
+      }
+    }
+  }
 }
