@@ -91,6 +91,7 @@ body {
   width: 100%;
   height: auto;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .chat-page {
@@ -554,7 +555,7 @@ body {
       width: fit-content;
       max-width: 90%;
       max-width: none;
-      height: 100vh;
+      height: 100%;
       transform: translateX(0%);
       border-right: 1px solid color(stroke);
       background-color: color(background);
@@ -1178,6 +1179,8 @@ body {
     &::before {
       content: "";
       position: absolute;
+      width: 100%;
+      height: auto;
       inset: 0;
       background: url("/flollama-new-chat.png") center/cover no-repeat;
       filter: blur(12px);
@@ -1219,11 +1222,122 @@ body {
   padding: 96px 128px;
   border-top: 1px solid color(stroke);
   text-align: center;
+
   .action-buttons {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    gap: 8px;
+    @media (max-width: 820px) {
+      gap: 4px;
+    }
+  }
+
+  .text {
+    p {
+      color: color(secondary-text);
+    }
+    @media (max-with: 648px) {
+      .h1 {
+        font-size: 32px;
+      }
+      .body-xlg {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 896px) {
+    padding: 64px 32px;
   }
 }
 
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 32px 50px;
+  border-top: 1px solid color(stroke);
+
+  .lhs {
+    .spans {
+      display: flex;
+      flex-direction: column;
+      color: color(secondary-text);
+    }
+    .trademark {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 0px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 8px 32px;
+
+    .footer-menu {
+      display: none;
+    }
+
+    .lhs {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      justify-content: space-between;
+      align-items: center;
+      .spans {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+      }
+    }
+  }
+
+  @media (max-width: 896px) {
+    padding: 16px 24px;
+  }
+
+  @media (max-width: 824px) {
+    padding: 24px 32px;
+    .lhs {
+      .spans {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        gap: 0;
+      }
+    }
+  }
+
+  @media (max-width: 596px) {
+    padding: 24px 16px;
+    .lhs {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+      .spans {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
