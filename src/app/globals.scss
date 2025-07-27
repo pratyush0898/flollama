@@ -68,11 +68,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: color(black);
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: color(white);
 }
 
 .topbar {
@@ -998,7 +998,7 @@ body {
   font-size: 1.2rem;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 2px 8px color(shadow);
+  box-shadow: 0 2px 8px color(bgblur-color);
 }
 
 .theme-toggle:hover {
@@ -1028,9 +1028,9 @@ body {
   width: 100%;
   background-color: hsla(194, 32%, 92%, 0.24);
   backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  box-shadow: -10px 0 10px color(shadow), 10px 0 10px color(shadow),
-    0 10px 10px color(shadow), 0 -10px 10px color(shadow);
+  // box-shadow: -10px 0 10px hsla(194, 32%, 92%, 0.24), 10px 0 10px hsla(194, 32%, 92%, 0.24);
+  //   0 10px 10px hsla(194, 32%, 92%, 0.24), 0 -10px 10px hsla(194, 32%, 92%, 0.24);
+  box-shadow: 0 0 24px color(bgblur-color);
   list-style: none;
   flex-direction: column;
   align-items: flex-start;
@@ -1102,7 +1102,7 @@ body {
     padding: 0;
     border: 1px solid color(stroke);
     border-radius: 16px;
-    box-shadow: 0 0 64px -1px rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 64px -1px color(bgblur-color);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1149,7 +1149,7 @@ body {
       aspect-ratio: 16 / 9;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 0 32px -1px rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 32px -1px color(bgblur-color);
     }
     .action-buttons {
       justify-content: start;
@@ -1377,14 +1377,14 @@ body {
       height: auto;
       display: block;
       border-radius: 100%;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 8px color(bgblur-color);
       object-fit: cover;
       transition: all 0.3s ease-in-out;
       border: 2px solid color(accent);
 
       &:hover {
         transform: scale(1.01);
-        box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 12px color(bgblur-color);
       }
 
       &:active {

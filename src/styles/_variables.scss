@@ -11,14 +11,13 @@
   --color-light-secondary: #e4eef1;
   --color-light-tertiary: #eaf0f5;
   --color-light-accent: #5354a2;
-  --color-light-bgblur-color: #ffffff1a;
+  --color-light-bgblur-color: rgba(0, 0, 0, 0.2);
   --color-light-stroke: #1c1c1c1a;
   --color-light-logicon: #3d3d3d;
   --color-light-dangerous: #ba1c1c;
   --color-light-dangerous-text: #dc2828;
   --color-light-popup-background: #f1f5f9;
   --color-light-hover-background: #eaf0f5;
-	--color-light-shadow: #0000001a;
 
   /* === Light Slate === */
   --color-light-slate-50: #707070;
@@ -33,22 +32,21 @@
   --color-light-slate-900: #e3e3e3;
   
   /* === Dark === */
-  --color-dark-text: hsl(0, 0%, 90%);
-  --color-dark-secondary-text: hsla(0, 0%, 100%, 0.6);
-  --color-dark-tertiary-text: hsla(0, 0%, 100%, 0.4);
-  --color-dark-background: hsl(0, 0%, 11%);
-  --color-dark-primary: hsl(208, 100%, 97%);
+  --color-dark-text: #e6e6e6;
+  --color-dark-secondary-text: #ffffff99;
+  --color-dark-tertiary-text: #ffffff66;
+  --color-dark-background: #1c1c1c;
+  --color-dark-primary: #f0f8ff;
   --color-dark-secondary: #292929;
   --color-dark-tertiary: #2e2e2e;
   --color-dark-accent: #c6c7f8;
-  --color-dark-bgblur-color: #0000001a;
+  --color-dark-bgblur-color: rgba(255, 255, 255, 0.1);
   --color-dark-stroke: #ffffff1a;
   --color-dark-logicon: #c2c2c2;
   --color-dark-dangerous: #811d1d;
   --color-dark-dangerous-text: #ba1c1c;
   --color-dark-popup-background: #292929;
   --color-dark-hover-background: #333333;
-	--color-dark-shadow: #0000001a;
 
   /* === Dark Slate === */
   --color-dark-slate-50: #8f8f8f;
@@ -331,7 +329,6 @@
   --color-dangerous-text: var(--color-light-dangerous-text);
   --color-popup-background: var(--color-light-popup-background);
   --color-hover-background: var(--color-light-hover-background);
-  --color-shadow: var(--color-light-shadow);
 }
 
 [data-theme="dark"] {
@@ -350,7 +347,6 @@
   --color-dangerous-text: var(--color-dark-dangerous-text);
   --color-popup-background: var(--color-dark-popup-background);
   --color-hover-background: var(--color-dark-hover-background);
-  --color-shadow: var(--color-dark-shadow);
 }
 
 $colors: (
@@ -371,7 +367,6 @@ $colors: (
   dangerous-text: var(--color-dangerous-text),
   popup-background: var(--color-popup-background),
   hover-background: var(--color-hover-background),
-  shadow: var(--color-shadow),
   slate: (
     50: var(--color-slate-50),
     100: var(--color-slate-100),
