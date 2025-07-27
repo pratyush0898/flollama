@@ -1028,8 +1028,6 @@ body {
   width: 100%;
   background-color: hsla(194, 32%, 92%, 0.24);
   backdrop-filter: blur(12px);
-  // box-shadow: -10px 0 10px hsla(194, 32%, 92%, 0.24), 10px 0 10px hsla(194, 32%, 92%, 0.24);
-  //   0 10px 10px hsla(194, 32%, 92%, 0.24), 0 -10px 10px hsla(194, 32%, 92%, 0.24);
   box-shadow: 0 0 24px color(bgblur-color);
   list-style: none;
   flex-direction: column;
