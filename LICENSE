@@ -1,4 +1,4 @@
-Pratyush Non-Commercial License (PNCL) v1.0
+Pratyush Non-Commercial License (PNCL) v2.0
 
 Copyright (c) 2025 Pratyush
 
@@ -9,58 +9,61 @@ Official online profiles and contacts include:
 - https://x.com/nvmpratyush
 - All mutually linked social media and contact accounts associated with these profiles.
 
-Permission is hereby granted to any person obtaining a copy of this software
-and associated documentation files (the "Software"), to use, study, and fork
-the Software for personal and educational purposes only, subject to the following
-conditions:
+This license applies to all parts of this project, including but not limited to:
+- Source code (JavaScript, TypeScript, Python, HTML, CSS, JSON, etc.)
+- Website structure, design, and styling (including HTML layout and TailwindCSS classes)
+- User interface and user experience (UI/UX)
+- Public text content, documentation, and written copy
+- Visual assets such as logos, icons, screenshots, and branding elements
 
-WHAT YOU ARE ALLOWED TO DO:
+The term "Software" refers to all of the above.
 
-- You may view and read the source code freely.
-- You may use the code for learning, studying, or personal experimentation.
-- You may fork the repository on GitHub or other platforms for educational or personal use.
-- You may modify the code for private, non-commercial use only.
-- You may share the original, unmodified code with proper attribution.
+Permission is hereby granted to any person obtaining a copy of this Software to use, study, and modify it for personal and educational purposes only, subject to the following conditions.
 
-WHAT YOU ARE NOT ALLOWED TO DO:
+YOU ARE ALLOWED TO:
 
-- You may NOT use this software or any modifications for commercial purposes.
-- You may NOT sell, resell, monetize, or sublicense any part of the software.
-- You may NOT remove, hide, or alter the original author's attribution or license.
-- You may NOT claim the project or modified versions as your own original work.
-- You may NOT replace data, content, or elements in the project and publish or promote it as if it was originally authored by you.
+- Use the Software for personal learning or non-commercial educational purposes.
+- Fork or clone the repository for private or educational use.
+- Modify the Software for private, non-commercial use.
+- Share unmodified versions of the Software with proper attribution.
 
-YOU SHOULD:
+YOU ARE NOT ALLOWED TO:
 
-- You should tag or mention the original author (Pratyush) when you fork or share the project publicly.
-- You should include a visible credit such as: "Originally created by Pratyush Kumar – https://github.com/pratyush0898"
-- You should keep the LICENSE file and attribution clearly visible in all public forks or modifications.
-- You should respect the intention of the software as a personal or educational portfolio project, not for commercial gain.
-- You should notify the author if you find the code useful or inspiring, as a courtesy.
+- Use any part of the Software for commercial purposes.
+- Sell, resell, license, or monetize any part of the Software or its derivatives.
+- Remove, hide, or alter the author's name, credit, or this license file.
+- Misrepresent the Software or any derivative as your own original work.
+- Rebrand or republish the Software with modified authorship or without clear attribution.
+- Integrate the Software into monetized tools, services, SaaS platforms, or templates.
+- Use the design, content, layout, or source code in commercial offerings of any kind.
 
 ATTRIBUTION REQUIREMENTS:
 
-All forks, copies, or modifications must retain visible credit to the original author:
+All forks, copies, and public modifications must retain the following attribution visibly and clearly:
+
 Created by Pratyush Kumar (https://github.com/pratyush0898)
 
-This LICENSE file must be included with any distributed or published form of this software.
+This LICENSE file must be included with any published or distributed version of the Software.
+
+YOU SHOULD:
+
+- Give visible credit to the author when sharing or discussing the Software.
+- Include a mention such as: "Originally created by Pratyush Kumar – https://github.com/pratyush0898"
+- Keep the LICENSE file intact and clearly accessible in forks and public versions.
+- Respect the Software's intent as a personal and educational project, not for commercial gain.
+- Notify the author if you found the Software useful, as a courtesy.
 
 LICENSE VIOLATION:
 
-Any breach of these terms grants the original author (Pratyush) full legal rights to take appropriate legal action under applicable copyright
-and intellectual property laws.
+Violation of any of the above conditions grants the original author full rights to pursue appropriate legal action under applicable copyright, intellectual property, and software licensing laws.
 
-COMMERCIAL OR SPECIAL LICENSE REQUESTS:
+COMMERCIAL OR CUSTOM LICENSE REQUESTS:
 
-If you want to use this software in any commercial or monetized project, or need a custom license, contact the author at:
-https://twitter.com/nvmpratyush
-or
+To request a commercial license, distribution rights, or use in monetized platforms, contact:
+
 https://x.com/nvmpratyush
+https://instagram.com/pratyush0898/
 
 DISCLAIMER:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM,
-DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
