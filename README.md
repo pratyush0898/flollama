@@ -113,7 +113,7 @@ Cost    ≈ ₹16–₹21/hour
 
 ## 📘 License
 
-Pratyush Non-Commercial License (PNCL) v1.0
+Pratyush Non-Commercial License (PNCL) v2.0
 
 © 2025 Pratyush Kumar
 
