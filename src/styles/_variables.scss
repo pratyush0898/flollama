@@ -4,20 +4,20 @@
 
   /* === Light === */
   --color-light-text: #1c1c1c;
-  --color-light-secondary-text: hsla(0, 0%, 11%, 0.6);
-  --color-light-tertiary-text: hsla(0, 0%, 0%, 0.4);
-  --color-light-background: hsl(0, 0%, 96%);
-  --color-light-primary: hsl(0, 0%, 7%);
-  --color-light-secondary: hsl(194, 32%, 92%);
-  --color-light-tertiary: hsl(207, 35%, 94%);
-  --color-light-accent: #5354A2;
-  --color-light-bgblur-color: hsla(0, 0%, 100%, 0.1);
-  --color-light-stroke: hsla(0, 0%, 11%, 0.1);
-  --color-light-logicon: hsl(0, 0%, 24%);
-  --color-light-dangerous: hsl(0, 74%, 42%);
-  --color-light-dangerous-text: hsl(0, 72%, 51%);
-  --color-light-popup-background: hsl(210, 40%, 96%);
-  --color-light-hover-background: hsl(207, 35%, 94%);
+  --color-light-secondary-text: #1c1c1c99;
+  --color-light-tertiary-text: #00000066;
+  --color-light-background: #f5f5f5;
+  --color-light-primary: #121212;
+  --color-light-secondary: #e4eef1;
+  --color-light-tertiary: #eaf0f5;
+  --color-light-accent: #5354a2;
+  --color-light-bgblur-color: #ffffff1a;
+  --color-light-stroke: #1c1c1c1a;
+  --color-light-logicon: #3d3d3d;
+  --color-light-dangerous: #ba1c1c;
+  --color-light-dangerous-text: #dc2828;
+  --color-light-popup-background: #f1f5f9;
+  --color-light-hover-background: #eaf0f5;
 	--color-light-shadow: #0000001a;
 
   /* === Light Slate === */
@@ -38,16 +38,16 @@
   --color-dark-tertiary-text: hsla(0, 0%, 100%, 0.4);
   --color-dark-background: hsl(0, 0%, 11%);
   --color-dark-primary: hsl(208, 100%, 97%);
-  --color-dark-secondary: hsl(0, 0%, 16%);
-  --color-dark-tertiary: hsl(0, 0%, 18%);
+  --color-dark-secondary: #292929;
+  --color-dark-tertiary: #2e2e2e;
   --color-dark-accent: #c6c7f8;
-  --color-dark-bgblur-color: hsla(0, 0%, 0%, 0.1);
-  --color-dark-stroke: hsla(0, 0%, 100%, 0.1);
-  --color-dark-logicon: hsl(0, 0%, 76%);
-  --color-dark-dangerous: hsl(0, 63%, 31%);
-  --color-dark-dangerous-text: hsl(0, 74%, 42%);
-  --color-dark-popup-background: hsl(0, 0%, 16%);
-  --color-dark-hover-background: hsl(0, 0%, 20%);
+  --color-dark-bgblur-color: #0000001a;
+  --color-dark-stroke: #ffffff1a;
+  --color-dark-logicon: #c2c2c2;
+  --color-dark-dangerous: #811d1d;
+  --color-dark-dangerous-text: #ba1c1c;
+  --color-dark-popup-background: #292929;
+  --color-dark-hover-background: #333333;
 	--color-dark-shadow: #0000001a;
 
   /* === Dark Slate === */
