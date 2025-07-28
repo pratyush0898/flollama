@@ -6,46 +6,51 @@ import { AuthProvider } from "@/context/AuthContext";
 import { inter, noto, poppins, ubuntu } from "@/font/fonts";
 
 /** @type {import('next').Metadata} */
+/** @type {import('next').Metadata} */
 export const metadata = {
-  title: "Flollama – Your AI Chat Assistant",
+  title: "Flollama – Open‑Source LLaMA 3 AI Chatbot by Pratyush",
   description:
-    "Flollama is an open-source AI chatbot built with Ollama and Next.js. Experience private, fast, and stylish AI chats powered by LLaMA 3.",
+    "Flollama by Pratyush is an open‑source, privacy‑first AI chatbot built with Ollama and Next.js. Enjoy fast, stylish conversations powered by the LLaMA 3 model—no API key needed.",
   keywords: [
     "Flollama",
     "AI chatbot",
+    "LLaMA 3",
+    "open‑source",
     "Ollama",
     "Next.js",
-    "LLaMA 3",
-    "React AI",
-    "open-source chatbot",
     "private AI",
-    "tailwind",
+    "React AI",
+    "Tailwind CSS",
+    "Pratyush",
   ],
   authors: [{ name: "Pratyush Kumar", url: "https://nvmpratyush.vercel.app/" }],
   creator: "Pratyush Kumar",
   robots: "index, follow",
   metadataBase: new URL("https://flollama.in"),
+  alternates: {
+    canonical: "/",
+  },
 
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/og-image.png", type: "image/png", sizes: "1200x630" },
+      { url: "/favicon.webp", type: "image/webp", sizes: "32x32" },
     ],
-    apple: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
 
   openGraph: {
-    title: "Flollama – Your AI Chat Assistant",
+    title: "Flollama – Open‑Source LLaMA 3 AI Chatbot by Pratyush",
     description:
-      "Open-source, private, fast chatbot using Ollama LLaMA 3 + Next.js + Tailwind.",
-    url: "https://flollama.in",
+      "Flollama is a blazing‑fast, private AI chatbot powered by LLaMA 3 and Ollama, built with Next.js and Tailwind CSS. No API key required—chat instantly.",
+    url: "https://flollama.in/",
     siteName: "Flollama",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Flollama Chatbot",
+        alt: "Screenshot of Flollama AI Chat UI",
       },
     ],
     locale: "en_IN",
@@ -54,11 +59,15 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Flollama – Your AI Chat Assistant",
+    title: "Flollama – Open‑Source LLaMA 3 AI Chatbot",
     description:
-      "Flollama is a blazing-fast, privacy-first chatbot powered by LLaMA 3 and Ollama, built with Next.js.",
+      "Flollama by Pratyush is an open‑source AI chatbot with Ollama + Next.js. Enjoy private, fast chats powered by LLaMA 3—no API key needed.",
     images: ["/og-image.png"],
     creator: "@nvmpratyush",
+  },
+
+  verification: {
+    google: "jRUy_ry4PSX-sDVpjn9c4bc-eVC5f_w4E5IVyTepHC8",
   },
 
   other: {
@@ -67,7 +76,7 @@ export const metadata = {
     "geo.position": "21.1905;81.2849",
     ICBM: "21.1905, 81.2849",
     "revisit-after": "7 days",
-    language: "English",
+    language: "en-US",
   },
 };
 

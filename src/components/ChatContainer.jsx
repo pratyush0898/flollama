@@ -45,12 +45,16 @@ export default function ChatContainer({ initialMessages = [], chatId }) {
       setStreamingMsg("");
     }
   }
-  async function generateMessage(userMessage) {
-    const userMsg = userMessage;
+  async function generateMessage(userMsg) {
+    if (!user || !chatId || !userMsg) return;
+
+    const updatedMessages = [...messages, userMsg]; // use existing userMsg
+    setLoading(true);
+    setStreamingMsg("");
 
     let fullReply = "";
     try {
-      await chatWithFlollama([userMsg], (token) => {
+      await chatWithFlollama(updatedMessages, (token) => {
         fullReply += token;
         setStreamingMsg((prev) => prev + token);
       });
