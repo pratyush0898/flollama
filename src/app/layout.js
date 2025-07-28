@@ -15,13 +15,11 @@ export const metadata = {
     "AI chatbot",
     "Ollama",
     "Next.js",
-    "React AI",
     "LLaMA 3",
+    "React AI",
     "open-source chatbot",
-    "AI Assistant",
     "private AI",
-    "fast chatbot",
-    "Tailwind CSS",
+    "tailwind",
   ],
   authors: [{ name: "Pratyush Kumar", url: "https://nvmpratyush.vercel.app/" }],
   creator: "Pratyush Kumar",
@@ -61,10 +59,6 @@ export const metadata = {
       "Flollama is a blazing-fast, privacy-first chatbot powered by LLaMA 3 and Ollama, built with Next.js.",
     images: ["/og-image.png"],
     creator: "@nvmpratyush",
-  },
-
-  verification: {
-    google: "jRUy_ry4PSX-sDVpjn9c4bc-eVC5f_w4E5IVyTepHC8", // Use your actual GSC verification code
   },
 
   other: {
