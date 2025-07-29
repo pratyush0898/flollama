@@ -16,21 +16,29 @@ export default function NewChatPage() {
     e.preventDefault();
     if (!user) return login();
 
-    const chatId = text.trim() || "New Chat";
-
     setLoading(true);
 
     try {
+      const res = await fetch("/api/summarize-title", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input: text.trim() }),
+      });
+
+      const { title, error } = await res.json();
+      if (error) throw new Error(error);
+      if (!res.ok) throw new Error("API failed");
+
+      const chatId = title;
       await saveChatMessages(user.uid, chatId, []);
-      if (text.trim()) {
-        await appendMessage(user.uid, chatId, {
-          role: "user",
-          content: text.trim(),
-        });
-      }
-      router.push(`/chat/${encodeURIComponent(chatId)}`);
-    } catch (error) {
-      console.error("Error creating chat:", error);
+      await appendMessage(user.uid, chatId, {
+        role: "user",
+        content: text.trim(),
+      });
+
+      router.push(`/chat/${chatId}`);
+    } catch (err) {
+      console.error("❌ Chat Error:", err.message);
       setLoading(false);
     }
   };

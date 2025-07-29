@@ -127,7 +127,7 @@ const Sidebar = ({
               <div className="chats-wapper">
                 {chats.map((c) => (
                   <Link key={c} href={`/chat/${c}`}>
-                    <SidebarButton>{c}</SidebarButton>
+                    <SidebarButton>{decodeURI(c)}</SidebarButton>
                   </Link>
                 ))}
               </div>{" "}
