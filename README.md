@@ -39,13 +39,11 @@
 ## ☁️ Google Cloud Server Config
 
 ```txt
-CPU     4 vCPU (e2-highcpu-4)
-GPU     NVIDIA A2 12GB / GTX 1650
-RAM     8 GB
+CPU     8 vCPU (e2-standard-4  4 cores)
+RAM     32 GB
 SWAP    8 GB
-DISK    50 GB SSD
+DISK    24GB SSD
 OS      Debian 12 (Bookworm)
-Cost    ≈ ₹16–₹21/hour
 ````
 
 ---
