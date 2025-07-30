@@ -4,10 +4,8 @@ import ThemeProvider from "@/utils/ThemeProvider";
 import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { inter, noto, poppins, ubuntu } from "@/font/fonts";
-import NavBar from "@/components/Page/NavBar";
-import Footer from "@/components/Page/Footer";
+import Script from 'next/script';
 
-/** @type {import('next').Metadata} */
 /** @type {import('next').Metadata} */
 export const metadata = {
   title: "Flollama – Open‑Source LLaMA 3 AI Chatbot by Pratyush",
@@ -85,17 +83,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+     <head>
+        {/* Google Analytics Script */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-952YL3MK2V"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-952YL3MK2V');
+          `}
+        </Script>
+      </head>
       <body
         className={`app-body ${inter.variable} ${poppins.variable} ${ubuntu.variable} ${noto.variable}`}
       >
         <ThemeProvider>
           <AuthModalProvider>
             <AuthProvider>
-              {/* <div className="page">
-              <NavBar /> */}
                 {children}
-                {/* <Footer />
-              </div> */}
             </AuthProvider>
           </AuthModalProvider>
         </ThemeProvider>
