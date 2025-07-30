@@ -4,6 +4,7 @@ import ThemeProvider from "@/utils/ThemeProvider";
 import { AuthModalProvider } from "@/context/AuthModalContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { inter, noto, poppins, ubuntu } from "@/font/fonts";
+import Script from 'next/script';
 
 /** @type {import('next').Metadata} */
 /** @type {import('next').Metadata} */
