@@ -1,9 +1,11 @@
 import "@/app/globals.scss";
 import "@/styles/tailwind.css";
 import ThemeProvider from "@/utils/ThemeProvider";
-import { AuthModalProvider } from "@/context/AuthModalContext";
+import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { inter, noto, poppins, ubuntu } from "@/font/fonts";
+import NavBar from "@/components/Page/NavBar";
+import Footer from "@/components/Page/Footer";
 
 /** @type {import('next').Metadata} */
 /** @type {import('next').Metadata} */
@@ -88,7 +90,13 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider>
           <AuthModalProvider>
-            <AuthProvider>{children}</AuthProvider>
+            <AuthProvider>
+              {/* <div className="page">
+              <NavBar /> */}
+                {children}
+                {/* <Footer />
+              </div> */}
+            </AuthProvider>
           </AuthModalProvider>
         </ThemeProvider>
       </body>

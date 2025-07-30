@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import { LinkButton, PrimaryButton, SecondaryButton } from "../ui/Button";
 import Link from "next/link";
+import { useAuthModal } from "@/context/AuthModalContext";
 
-const Footer = ({ toggleLogin, toggleSignup }) => {
+const Footer = () => {
+  const { toggleLogin, toggleSignup } = useAuthModal();
   return (
     <div className="footer">
       <div className="lhs">

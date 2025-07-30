@@ -5,7 +5,7 @@ const About = ({ toggleLogin, toggleSignup }) => {
   return (
     <div className="about">
       <div className="lhs">
-        <img src="https://nvmpratyush.vercel.app/homepage.png" />
+        <img src="/author.png" />
       </div>
       <div className="rhs">
         <div className="text">

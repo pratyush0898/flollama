@@ -7,8 +7,9 @@ import {
   SecondaryButton,
 } from "../ui/Button";
 import Link from "next/link";
+import { useAuthModal } from "@/context/AuthModalContext";
 
-const NavBar = ({ toggleLogin, toggleSignup }) => {
+const NavBar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,6 +25,7 @@ const NavBar = ({ toggleLogin, toggleSignup }) => {
 
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
+  const { toggleLogin, toggleSignup } = useAuthModal();
   return (
     <>
       <div className={`navbar`}>
