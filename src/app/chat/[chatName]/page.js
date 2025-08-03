@@ -30,7 +30,6 @@ export default function ChatPage({ params }) {
         return;
       }
 
-      // 🔁 If exists, load messages
       messagesUnsub = loadChatMessages(
         user.uid,
         decodedChatName,

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { PrimaryButton, SidebarButton } from "@/components/ui/Button.jsx";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
@@ -23,6 +23,19 @@ const Sidebar = ({
     return () => unsubscribe();
   }, [user]);
 
+  const chatsRef = useRef(null);
+
+  useEffect(() => {
+    const el = chatsRef.current;
+    if (el) {
+      el.style.flexGrow = "1";
+      requestAnimationFrame(() => {
+        const height = el.offsetHeight;
+        el.style.height = `${height}px`;
+        el.style.overflowY = "auto";
+      });
+    }
+  }, []);
   return (
     <div className={`sidebar ${isOpen ? "w-[290px] open" : "w-[60px]"}`}>
       <div
@@ -69,7 +82,7 @@ const Sidebar = ({
           isOpen ? `hey` : "bbscs"
         }`}
       >
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 grow">
           <div className="flex justify-between w-full">
             <div className="icon">
               <svg
@@ -106,7 +119,7 @@ const Sidebar = ({
               </svg>
             </div>
           </div>
-          <div className="top flex-row items-start">
+          <div className="top">
             <div className="action-buttons flex-row">
               <Link href="/chat">
                 <PrimaryButton className="flex-row w-full pri-w-button">
@@ -124,7 +137,7 @@ const Sidebar = ({
             </div>
             <div className="chats-group">
               <span className="chats-text body">Chats</span>
-              <div className="chats-wapper">
+              <div className="chats-wapper" ref={chatsRef}>
                 {chats.map((c) => (
                   <Link key={c} href={`/chat/${c}`}>
                     <SidebarButton>{decodeURI(c)}</SidebarButton>

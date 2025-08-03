@@ -48,7 +48,7 @@ export default function ChatContainer({ initialMessages = [], chatId }) {
   async function generateMessage(userMsg) {
     if (!user || !chatId || !userMsg) return;
 
-    const updatedMessages = [...messages, userMsg]; // use existing userMsg
+    const updatedMessages = [...messages, userMsg];
     setLoading(true);
     setStreamingMsg("");
 

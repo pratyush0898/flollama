@@ -22,7 +22,6 @@ export async function appendMessage(uid, chatName, message) {
   await updateDoc(chatRef, { messages: [...prev, message] });
 }
 
-// ✅ Real-time: load chat messages
 export function loadChatMessages(uid, chatName, callback) {
   const chatRef = doc(db, "users", uid, "chats", chatName);
   return onSnapshot(chatRef, (snap) => {
