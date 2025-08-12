@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Flollama Chat API (`https://flollama.in/api/chat`) provides a streaming chat interface powered by Ollama[api at https://ollama.flollama.in/. This guide covers how to interact with the API using various programming languages and approaches.
+The Flollama Chat API (https://flollama.in/api/chat) provides a streaming chat interface powered by Ollama(api at https://ollama.flollama.in/). This guide covers how to interact with the API using various programming languages and approaches.
 
 ## API Specification
 
