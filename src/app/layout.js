@@ -4,19 +4,20 @@ import ThemeProvider from "@/utils/ThemeProvider";
 import { AuthModalProvider, useAuthModal } from "@/context/AuthModalContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { inter, noto, poppins, ubuntu } from "@/font/fonts";
-import Script from 'next/script';
+import Script from "next/script";
+import { ProtectedRouteProvider, useProtectedRoute } from "@/context/ProtectedRoute";
 
 /** @type {import('next').Metadata} */
 export const metadata = {
-  title: "Flollama – Open‑Source LLaMA 3 AI Chatbot by Pratyush",
+  title: "Flollama – Open‑Source Gemini 2.0 Flash Lite AI Chatbot by Pratyush",
   description:
-    "Flollama by Pratyush is an open‑source, privacy‑first AI chatbot built with Ollama and Next.js. Enjoy fast, stylish conversations powered by the LLaMA 3 model—no API key needed.",
+    "Flollama by Pratyush is an open‑source, privacy‑first AI chatbot built with Gemini and Next.js. Enjoy fast, stylish conversations powered by the Gemini 2.0 Flash Lite.",
   keywords: [
     "Flollama",
     "AI chatbot",
-    "LLaMA 3",
+    "Gemini 2.0 Flash Lite",
     "open‑source",
-    "Ollama",
+    "Gemini",
     "Next.js",
     "private AI",
     "React AI",
@@ -40,9 +41,10 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Flollama – Open‑Source LLaMA 3 AI Chatbot by Pratyush",
+    title:
+      "Flollama – Open‑Source Gemini 2.0 Flash Lite AI Chatbot by Pratyush",
     description:
-      "Flollama is a blazing‑fast, private AI chatbot powered by LLaMA 3 and Ollama, built with Next.js and Tailwind CSS. No API key required—chat instantly.",
+      "Flollama is a blazing‑fast, private AI chatbot powered by Gemini 2.0 Flash Lite, built with Next.js and Tailwind CSS. No API key required—chat instantly.",
     url: "https://flollama.in/",
     siteName: "Flollama",
     images: [
@@ -50,7 +52,7 @@ export const metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Screenshot of Flollama AI Chat UI",
+        alt: "Banner for Flollama AI",
       },
     ],
     locale: "en_IN",
@@ -83,7 +85,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-     <head>
+      <head>
         {/* Google Analytics Script */}
         <Script
           strategy="afterInteractive"
@@ -104,7 +106,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <AuthModalProvider>
             <AuthProvider>
-                {children}
+              {children}
             </AuthProvider>
           </AuthModalProvider>
         </ThemeProvider>

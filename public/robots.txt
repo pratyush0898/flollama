@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /chat/
+
+# Host
+Host: https://flollama.in
+
+# Sitemaps
+Sitemap: https://flollama.in/sitemap.xml
+Sitemap: https://flollama.in/server-sitemap.xml

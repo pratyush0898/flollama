@@ -5,14 +5,24 @@ import CTA from "@/components/Page/CTA";
 import Hero from "@/components/Page/Hero";
 import { useAuth } from "@/context/AuthContext";
 import { useAuthModal } from "@/context/AuthModalContext";
-import { redirect } from "next/navigation";
-import React from "react";
+import { redirect, usePathname } from "next/navigation";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
 
 export default function Index() {
   const { toggleLogin, toggleSignup } = useAuthModal();
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
+  const pathname = usePathname();
 
-  if (user) redirect("/chat");
+  useEffect(() => {
+    if (loading) return;
+
+    if (user === null && pathname.startsWith("/chat")) {
+      redirect("/");
+    } else if (user && !pathname.startsWith("/chat")) {
+      redirect("/chat");
+    }
+  }, [user, loading, pathname]);
 
   return (
     <React.Fragment>

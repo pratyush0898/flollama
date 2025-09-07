@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
-import { Ollama } from "ollama";
+import { GoogleGenAI } from "@google/genai";
+
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
 export async function GET() {
   try {
@@ -32,27 +35,26 @@ export async function POST(req) {
       );
     }
 
-    const ollama = new Ollama({ host: process.env.OLLAMA_HOST });
+    // System prompt to summarize input into 2-4 word lowercase title
+    const systemPrompt = `You are an AI assistant that generates concise conversation titles. Given the user's starting prompt for a conversation with an AI assistant, create a 2 to 4 word title that summarizes the conversation. Use only lowercase letters. Do not include punctuation, quotes, or any extra text. Respond with exactly the title and nothing else.`;
 
-    const systemPrompt = `Summarize the user's input into a short 2 to 4 word title of a simple Conversation. Use only lowercase letters. Do not include punctuation or quotes. Respond with the title only and nothing else.`;
+    // Combine system prompt + user input
+    const prompt = `${systemPrompt}\n${input}`;
 
-    const chatMessages = [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: input },
-    ];
-
-    const res = await ollama.chat({
-      model: process.env.OLLAMA_NAME_MODEL,
-      messages: chatMessages,
+    const response = await ai.models.generateContent({
+      model: process.env.GEMINI_MODEL, // model from env
+      contents: prompt,
     });
 
-    let title = res.message?.content?.trim().toLowerCase();
+    let title = response.text?.trim().toLowerCase();
 
+    // fallback if Gemini returns empty
     if (!title || title.length === 0) {
       title = input.split(" ").slice(0, 4).join(" ").toLowerCase();
     }
 
     return NextResponse.json({ title });
+
   } catch (err) {
     console.error("[summarize-title]", err);
     return NextResponse.json({ error: err.message }, { status: 500 });
