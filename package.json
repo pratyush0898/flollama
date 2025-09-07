@@ -23,7 +23,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-spinners": "^0.17.0",
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "sv443-joke-api": "^0.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
