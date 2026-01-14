@@ -18,7 +18,7 @@
     "@google/genai": "^1.17.0",
     "@tailwindcss/cli": "^4.1.11",
     "firebase": "^12.0.0",
-    "next": "^15.3.4",
+    "next": "15.3.8",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
