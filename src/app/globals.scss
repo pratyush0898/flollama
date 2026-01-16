@@ -297,9 +297,24 @@ body {
 
 .assistant-wapper {
   display: flex;
-  font-family: font(poppins);
   justify-content: flex-start;
+  font-family: font(poppins);
 }
+
+.user-markdown,
+.assistant-markdown {
+  display: block;
+  width: 100%;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.user-markdown,
+.assistant-markdown > * {
+  display: block;
+  width: 100%;
+}
+
 
 .user-bubble {
   letter-spacing: 0em;
